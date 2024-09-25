@@ -84,12 +84,12 @@ export const globalStyles = css`
   }
 
   h2 {
-    font-size: var(--fs-2xl);
+    font-size: var(--fs-3xl);
     font-weight: var(--fw-sb);
   }
 
   h3 {
-    font-size: var(--fs-xl);
+    font-size: var(--fs-2xl);
     font-weight: var(--fw-sb);
   }
 
