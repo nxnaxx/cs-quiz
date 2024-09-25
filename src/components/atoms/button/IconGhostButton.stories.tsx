@@ -2,44 +2,45 @@ import { Meta, StoryObj } from '@storybook/react';
 import IconFilledButton from './IconFilledButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import IconGhostButton from './IconGhostButton';
 
-const meta: Meta<typeof IconFilledButton> = {
-  title: 'organisms/IconFilledButton',
-  component: IconFilledButton,
+const meta: Meta<typeof IconGhostButton> = {
+  title: 'organisms/IconGhostButton',
+  component: IconGhostButton,
 };
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const PrimaryIconFilledButton: Story = {
+export const PrimaryIconGhostButton: Story = {
   render: () => (
-    <IconFilledButton>
+    <IconGhostButton>
       <FontAwesomeIcon icon={faArrowRight} />
-    </IconFilledButton>
+    </IconGhostButton>
   ),
 };
 
-export const SmallIconFilledButton: Story = {
+export const SmallIconGhostButton: Story = {
   render: () => (
-    <IconFilledButton size="small">
+    <IconGhostButton size="small">
       <FontAwesomeIcon icon={faArrowRight} />
-    </IconFilledButton>
+    </IconGhostButton>
   ),
 };
 
-export const SecondaryIconFilledButton: Story = {
+export const SecondaryIconGhostButton: Story = {
   render: () => (
-    <IconFilledButton variant="secondary">
+    <IconGhostButton variant="secondary">
       <FontAwesomeIcon icon={faArrowRight} />
-    </IconFilledButton>
+    </IconGhostButton>
   ),
 };
 
-export const DisabledIconFilledButton: Story = {
+export const DisabledIconGhostButton: Story = {
   render: () => (
-    <IconFilledButton disabled>
+    <IconGhostButton disabled>
       <FontAwesomeIcon icon={faArrowRight} />
-    </IconFilledButton>
+    </IconGhostButton>
   ),
 };
