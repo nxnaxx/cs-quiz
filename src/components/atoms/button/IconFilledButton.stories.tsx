@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const meta: Meta<typeof IconFilledButton> = {
-  title: 'organisms/IconFilledButton',
+  title: 'atoms/IconFilledButton',
   component: IconFilledButton,
 };
 

@@ -5,7 +5,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import IconGhostButton from './IconGhostButton';
 
 const meta: Meta<typeof IconGhostButton> = {
-  title: 'organisms/IconGhostButton',
+  title: 'atoms/IconGhostButton',
   component: IconGhostButton,
 };
 

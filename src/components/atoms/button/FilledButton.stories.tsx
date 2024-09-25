@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import FilledButton from './FilledButton';
 
 const meta: Meta<typeof FilledButton> = {
-  title: 'organisms/FilledButton',
+  title: 'atoms/FilledButton',
   component: FilledButton,
 };
 
