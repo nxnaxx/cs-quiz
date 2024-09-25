@@ -38,6 +38,12 @@ export const globalStyles = css`
     --background: #f6f9ff;
     --white: #ffffff;
 
+    /* Shadow */
+    --shadow1: 0 8px 16px 0 rgb(156 162 180 / 20%);
+    --shadow2: 0 2px 4px 0 rgb(156 162 180 / 40%);
+    --color-shadow-purple: 0 2px 4px 0 rgb(104 7 249 / 40%);
+    --color-shadow-yellow: 0 2px 4px 0 rgb(255 215 57 / 40%);
+
     /* Font Size */
     --fs-xs: 0.75rem;
     --fs-s: 0.875rem;
