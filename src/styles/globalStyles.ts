@@ -56,6 +56,7 @@ export const globalStyles = css`
     /* Font Weight */
     --fw-m: 500;
     --fw-sb: 600;
+    --fw-eb: 800;
   }
 
   * {
