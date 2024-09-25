@@ -3,8 +3,8 @@ import styled from '@emotion/styled';
 
 const HeaderContainer = styled.header`
   width: 100%;
-  background-color: var(--white);
   border-bottom: 1px solid var(--dark-50);
+  background-color: var(--white);
 `;
 
 const HeaderInner = styled.div`
