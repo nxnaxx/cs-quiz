@@ -15,6 +15,7 @@ const TagContainer = styled.div<TagProps>`
   color: ${(props) =>
     props.variant === 'primary' ? 'var(--primary-lighter)' : 'var(--secondary-dark)'};
   font-size: ${(props) => (props.size === 'medium' ? 'var(--fs-base)' : 'var(--fs-s)')};
+  font-weight: var(--fw-m);
 `;
 
 export default function Tag({ size = 'medium', variant = 'primary', children }: TagProps) {

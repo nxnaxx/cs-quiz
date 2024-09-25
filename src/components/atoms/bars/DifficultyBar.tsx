@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Difficulty } from '../../../types/QuizTypes';
+import { Difficulty } from '../../../types/quizTypes';
 
 interface DifficultyBarProps {
   difficulty: Difficulty;
