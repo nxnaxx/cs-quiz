@@ -2,10 +2,10 @@ import { css } from '@emotion/react';
 
 export const globalStyles = css`
   @font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard.woff')
       format('woff');
-    font-weight: 400;
+    font-weight: normal;
     font-style: normal;
   }
 
@@ -75,7 +75,10 @@ export const globalStyles = css`
     background-color: var(--white);
     color: var(--dark-700);
     font-size: var(--fs-base);
-    font-family: 'Pretendard-Regular', sans-serif;
+    font-family:
+      'Pretendard',
+      -apple-system,
+      sans-serif;
     line-height: 1.6;
   }
 
@@ -103,6 +106,7 @@ export const globalStyles = css`
   button {
     border: none;
     background: none;
+    font-weight: var(--fw-m);
     cursor: pointer;
   }
 

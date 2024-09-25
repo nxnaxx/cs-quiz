@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import FilledButton from './FillEdButton';
+import FilledButton from './FilledButton';
 
 const meta: Meta<typeof FilledButton> = {
   title: 'organisms/FilledButton',

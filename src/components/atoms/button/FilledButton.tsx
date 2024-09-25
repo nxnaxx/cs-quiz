@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { ButtonProps } from '../../types/buttonTypes';
-import { center } from '../../styles/mixins';
+import { ButtonProps } from '../../../types/buttonTypes';
+import { center } from '../../../styles/mixins';
 
 const ButtonContainer = styled.button<ButtonProps>`
   ${center}
