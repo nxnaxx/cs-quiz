@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { TagProps } from '../../../types/elementTypes';
 import { center } from '../../../styles/mixins';
 
-const ButtonContainer = styled.div<TagProps>`
+const TagContainer = styled.div<TagProps>`
   ${center}
   display: inline-flex;
   min-width: ${(props) => (props.size === 'medium' ? '64px' : '56px')};
@@ -19,8 +19,8 @@ const ButtonContainer = styled.div<TagProps>`
 
 export default function Tag({ size = 'medium', variant = 'primary', children }: TagProps) {
   return (
-    <ButtonContainer size={size} variant={variant}>
+    <TagContainer size={size} variant={variant}>
       {children}
-    </ButtonContainer>
+    </TagContainer>
   );
 }
