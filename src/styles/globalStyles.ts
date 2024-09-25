@@ -11,10 +11,16 @@ export const globalStyles = css`
 
   :root {
     /* Primary Color */
-    --primary: #e93737;
-    --primary-dark: #d31717;
-    --primary-lighter: #f39191;
-    --primary-pale: #fdeded;
+    --primary: #6807f9;
+    --primary-dark: #5305c7;
+    --primary-lighter: #9852f9;
+    --primary-pale: #f0e6fe;
+
+    /* Secondary Color */
+    --secondary: #ffd739;
+    --secondary-dark: #ffcd05;
+    --secondary-lighter: #ffeb9e;
+    --secondary-pale: #fff6d1;
 
     /* System Color */
     --red: #f44636;
@@ -23,12 +29,13 @@ export const globalStyles = css`
     --blue: #0079ff;
 
     /* Neutral Color */
-    --black: #070809;
-    --dark-700: #343b42;
-    --dark-500: #4a545f;
-    --dark-300: #798897;
-    --dark-100: #ced4d9;
-    --dark-50: #ebedef;
+    --dark-700: #242a38;
+    --dark-500: #494f5f;
+    --dark-300: #717788;
+    --dark-200: #9ca2b4;
+    --dark-100: #c9d0e2;
+    --dark-50: #ebeef4;
+    --background: #f6f9ff;
     --white: #ffffff;
 
     /* Font Size */
@@ -38,7 +45,7 @@ export const globalStyles = css`
     --fs-l: 1.125rem;
     --fs-xl: 1.25rem;
     --fs-2xl: 1.5rem;
-    --fs-3xl: 2.25rem;
+    --fs-3xl: 1.75rem;
 
     /* Font Weight */
     --fw-m: 500;
