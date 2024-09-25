@@ -4,14 +4,13 @@ import { center } from '../../../styles/mixins';
 
 const ButtonContainer = styled.button<ButtonProps>`
   ${center}
-  min-width: ${(props) => (props.size === 'medium' ? '96px' : '80px')};
-  min-height: ${(props) => (props.size === 'medium' ? '40px' : '36px')};
-  padding: 8px 16px;
-  border-radius: 24px;
+  width: ${(props) => (props.size === 'medium' ? '40px' : '36px')};
+  height: ${(props) => (props.size === 'medium' ? '40px' : '36px')};
+  border-radius: 50%;
   background-color: ${(props) =>
     props.variant === 'primary' ? 'var(--primary)' : 'var(--secondary)'};
   color: var(--white);
-  font-size: ${(props) => (props.size === 'medium' ? 'var(--fs-base)' : 'var(--fs-s)')};
+  font-size: ${(props) => (props.size === 'medium' ? '20px' : '18px')};
 
   &:hover {
     background-color: ${(props) =>
@@ -20,12 +19,11 @@ const ButtonContainer = styled.button<ButtonProps>`
 
   &:disabled {
     background-color: var(--dark-50);
-    color: var(--dark-100);
     cursor: auto;
   }
 `;
 
-export default function FilledButton({
+export default function IconFilledButton({
   size = 'medium',
   variant = 'primary',
   disabled = false,

@@ -10,14 +10,18 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const PrimaryFillButton: Story = {
+export const PrimaryFilledButton: Story = {
   render: () => <FilledButton>시작하기</FilledButton>,
 };
 
-export const SecondaryFillButton: Story = {
+export const SmallFilledButton: Story = {
+  render: () => <FilledButton size="small">시작하기</FilledButton>,
+};
+
+export const SecondaryFilledButton: Story = {
   render: () => <FilledButton variant="secondary">시작하기</FilledButton>,
 };
 
-export const DisabledFillButton: Story = {
+export const DisabledFilledButton: Story = {
   render: () => <FilledButton disabled>시작하기</FilledButton>,
 };
