@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { inner } from '@styles/mixins';
+import { quizCards } from '@data/quizCards';
 import QuizCard from '@molecules/card/QuizCard';
 
 const TryItContainer = styled.div`
@@ -54,27 +55,9 @@ export default function TryItNow() {
     <TryItContainer>
       <Title>지금 도전하기</Title>
       <CardList>
-        <QuizCard
-          imgSrc="src/assets/images/javascript.png"
-          title="JavaScript"
-          difficulty="easy"
-          quizType="객관식"
-          quizNums={10}
-        />
-        <QuizCard
-          imgSrc="src/assets/images/library.png"
-          title="프레임워크 및 라이브러리"
-          difficulty="easy"
-          quizType="OX 퀴즈"
-          quizNums={10}
-        />
-        <QuizCard
-          imgSrc="src/assets/images/algorithm.png"
-          title="알고리즘"
-          difficulty="normal"
-          quizType="빈칸 맞추기"
-          quizNums={10}
-        />
+        {quizCards.map((props) => (
+          <QuizCard key={props.title} {...props} />
+        ))}
       </CardList>
     </TryItContainer>
   );

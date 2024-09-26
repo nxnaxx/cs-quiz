@@ -1,19 +1,10 @@
-import styled from '@emotion/styled';
-import MainTemplate from '@templates/MainTemplate';
-import TopicCard from '@molecules/card/TopicCard';
+interface topicType {
+  title: string;
+  description: string;
+  imgSrc: string;
+}
 
-const TopicTitle = styled.h2`
-  margin-bottom: 48px;
-  text-align: center;
-`;
-
-const TopicList = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-`;
-
-const topics = [
+export const topics: topicType[] = [
   {
     title: 'HTML/CSS',
     description: '웹 페이지의 구조와 콘텐츠를 정의하고 디자인과 스타일을 지정하는 기술',
@@ -55,16 +46,3 @@ const topics = [
     imgSrc: 'src/assets/images/cloud.png',
   },
 ];
-
-export default function Topic() {
-  return (
-    <MainTemplate>
-      <TopicTitle>주제 선택</TopicTitle>
-      <TopicList>
-        {topics.map((props) => (
-          <TopicCard key={props.title} {...props} />
-        ))}
-      </TopicList>
-    </MainTemplate>
-  );
-}

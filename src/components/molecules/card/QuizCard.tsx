@@ -2,18 +2,10 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { Difficulty, QuizNums, QuizType } from 'src/types/quizTypes';
+import { QuizCardProps } from '@data/topics';
 import DifficultyBar from '@atoms/bars/DifficultyBar';
 import Tag from '@atoms/tag/Tag';
 import IconFilledButton from '@atoms/button/IconFilledButton';
-
-interface QuizCardProps {
-  imgSrc: string;
-  title: string;
-  difficulty: Difficulty;
-  quizType: QuizType;
-  quizNums: QuizNums;
-}
 
 const CardContainer = styled(motion.div)`
   width: 100%;

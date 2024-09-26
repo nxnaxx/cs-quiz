@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import Topic from './pages/Topic';
+import Topics from './pages/Topics';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route index element={<Home />} />
-        <Route path="/topic" element={<Topic />} />
+        <Route path="/topics" element={<Topics />} />
       </Routes>
     </BrowserRouter>
   );
