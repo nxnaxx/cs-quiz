@@ -18,7 +18,11 @@ export const Card1: Story = {
     quizType: '객관식',
     quizNums: 10,
   },
-  render: (args) => <QuizCard {...args} />,
+  render: (args) => (
+    <div style={{ width: '320px' }}>
+      <QuizCard {...args} />
+    </div>
+  ),
 };
 
 export const Card2: Story = {
@@ -29,5 +33,9 @@ export const Card2: Story = {
     quizType: 'OX 퀴즈',
     quizNums: 10,
   },
-  render: (args) => <QuizCard {...args} />,
+  render: (args) => (
+    <div style={{ width: '320px' }}>
+      <QuizCard {...args} />
+    </div>
+  ),
 };
