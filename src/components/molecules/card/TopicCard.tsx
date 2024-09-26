@@ -13,6 +13,10 @@ const CardContainer = styled(motion.div)`
   background-color: var(--white);
   box-shadow: var(--shadow1);
   cursor: pointer;
+
+  &:hover {
+    box-shadow: var(--color-shadow);
+  }
 `;
 
 const Thumbnail = styled.div`
