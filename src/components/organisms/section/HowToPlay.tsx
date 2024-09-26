@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
-import { center, inner } from '../../styles/mixins';
+import { center, inner } from '../../../styles/mixins';
 
 const PlayContainer = styled.section`
   width: 100%;
-  background-color: var(--background);
+  background-color: var(--white);
 `;
 
 const PlayWrapper = styled.div`
   ${inner}
-  padding: 280px 40px 120px 40px;
+  padding: 320px 40px 120px 40px;
 `;
 
 const Title = styled.h2`

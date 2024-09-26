@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { Difficulty, QuizNums, QuizType } from '../../../types/quizTypes';
@@ -14,13 +15,15 @@ interface QuizCardProps {
   quizNums: QuizNums;
 }
 
-const CardContainer = styled.div`
-  width: 340px;
+const CardContainer = styled(motion.div)`
+  width: 100%;
+  min-width: 240px;
   padding: 24px;
   border: 8px solid var(--primary-pale);
   border-radius: 16px;
   background-color: var(--white);
   box-shadow: var(--shadow-1);
+  cursor: pointer;
 `;
 
 const StepImage = styled.div`
@@ -66,7 +69,7 @@ const TagWrapper = styled.div`
 
 export default function QuizCard({ imgSrc, title, difficulty, quizType, quizNums }: QuizCardProps) {
   return (
-    <CardContainer>
+    <CardContainer whileHover={{ scale: [null, 1.05, 1.05] }} transition={{ duration: 0.3 }}>
       <StepImage>
         <img src={imgSrc} alt={title} />
       </StepImage>

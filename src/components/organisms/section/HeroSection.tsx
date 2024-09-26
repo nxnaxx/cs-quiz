@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { inner } from '../../styles/mixins';
-import FilledButton from '../atoms/button/FilledButton';
+import { inner } from '../../../styles/mixins';
+import FilledButton from '../../atoms/button/FilledButton';
 
 const HeroContainer = styled.section`
   width: 100%;
@@ -12,7 +12,7 @@ const HeroWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 96px 40px 400px 40px;
+  padding: 96px 40px 480px 40px;
 `;
 
 const HeroContent = styled.div`
