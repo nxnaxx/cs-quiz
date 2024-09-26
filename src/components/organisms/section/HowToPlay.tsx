@@ -8,7 +8,7 @@ const PlayContainer = styled.section`
 
 const PlayWrapper = styled.div`
   ${inner}
-  padding: 320px 40px 120px 40px;
+  padding: 320px 40px 160px 40px;
 `;
 
 const Title = styled.h2`

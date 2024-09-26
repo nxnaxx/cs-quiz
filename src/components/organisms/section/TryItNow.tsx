@@ -7,7 +7,7 @@ const TryItContainer = styled.div`
   position: absolute;
   bottom: -50%;
   left: 50%;
-  transform: translate(-50%, -30%);
+  transform: translate(-50%, -10%);
   z-index: 1010;
   width: 100%;
   padding: 0 40px;

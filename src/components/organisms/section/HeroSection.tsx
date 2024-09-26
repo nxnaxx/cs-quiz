@@ -12,7 +12,7 @@ const HeroWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 96px 40px 480px 40px;
+  padding: 120px 40px 520px 40px;
 `;
 
 const HeroContent = styled.div`
