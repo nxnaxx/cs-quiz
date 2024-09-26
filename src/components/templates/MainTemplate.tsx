@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import Header from '../organisms/header/Header';
-import Footer from '../organisms/footer/Footer';
+import Header from '@organisms/header/Header';
+import Footer from '@organisms/footer/Footer';
 
 interface MainTemplateProps {
   children?: React.ReactNode;

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import MainTemplate from '../components/templates/MainTemplate';
-import TopicCard from '../components/molecules/card/TopicCard';
+import MainTemplate from '@templates/MainTemplate';
+import TopicCard from '@molecules/card/TopicCard';
 
 const TopicTitle = styled.h2`
   margin-bottom: 48px;

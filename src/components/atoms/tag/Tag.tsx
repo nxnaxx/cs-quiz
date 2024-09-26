@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { TagProps } from '../../../types/elementTypes';
-import { center } from '../../../styles/mixins';
+import { center } from '@styles/mixins';
+import { TagProps } from 'src/types/elementTypes';
 
 const TagContainer = styled.div<TagProps>`
   ${center}

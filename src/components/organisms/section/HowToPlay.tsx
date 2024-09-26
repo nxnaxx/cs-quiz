@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { center, inner } from '../../../styles/mixins';
+import { center, inner } from '@styles/mixins';
 
 const PlayContainer = styled.section`
   width: 100%;

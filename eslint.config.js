@@ -31,5 +31,5 @@ export default defineConfig({
     '@typescript-eslint/no-explicit-any': 'warn',
     'no-console': 'warn',
   },
-  ignorePatterns: ['node_modules', 'build'],
+  ignorePatterns: ['node_modules', 'build', 'vite.config.ts'],
 });
