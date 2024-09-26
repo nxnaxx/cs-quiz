@@ -14,6 +14,10 @@ export const PrimaryFilledButton: Story = {
   render: () => <FilledButton>시작하기</FilledButton>,
 };
 
+export const LargeFilledButton: Story = {
+  render: () => <FilledButton size="large">시작하기</FilledButton>,
+};
+
 export const SmallFilledButton: Story = {
   render: () => <FilledButton size="small">시작하기</FilledButton>,
 };

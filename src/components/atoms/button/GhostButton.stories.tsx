@@ -14,6 +14,10 @@ export const PrimaryGhostButton: Story = {
   render: () => <GhostButton>시작하기</GhostButton>,
 };
 
+export const LargeGhostButton: Story = {
+  render: () => <GhostButton size="large">시작하기</GhostButton>,
+};
+
 export const SmallGhostButton: Story = {
   render: () => <GhostButton size="small">시작하기</GhostButton>,
 };

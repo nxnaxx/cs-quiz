@@ -4,14 +4,21 @@ import { center } from '../../../styles/mixins';
 
 const ButtonContainer = styled.button<ButtonProps>`
   ${center}
-  width: ${(props) => (props.size === 'medium' ? '40px' : '36px')};
-  height: ${(props) => (props.size === 'medium' ? '40px' : '36px')};
+  width: ${(props) =>
+    props.size === 'large' ? '48px' : props.size === 'medium' ? '40px' : '36px'};
+  height: ${(props) =>
+    props.size === 'large' ? '48px' : props.size === 'medium' ? '40px' : '36px'};
   border: 1px solid
     ${(props) => (props.variant === 'primary' ? 'var(--primary)' : 'var(--secondary)')};
   border-radius: 50%;
   background-color: var(--white);
   color: ${(props) => (props.variant === 'primary' ? 'var(--primary)' : 'var(--secondary-dark)')};
-  font-size: ${(props) => (props.size === 'medium' ? '20px' : '18px')};
+  font-size: ${(props) =>
+    props.size === 'large'
+      ? 'var(--fs-xl)'
+      : props.size === 'medium'
+        ? 'var(--fs-base)'
+        : 'var(--fs-s)'};
 
   &:hover {
     background-color: ${(props) =>

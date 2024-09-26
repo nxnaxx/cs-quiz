@@ -20,6 +20,14 @@ export const PrimaryIconFilledButton: Story = {
   ),
 };
 
+export const LargeIconFilledButton: Story = {
+  render: () => (
+    <IconFilledButton size="large">
+      <FontAwesomeIcon icon={faArrowRight} />
+    </IconFilledButton>
+  ),
+};
+
 export const SmallIconFilledButton: Story = {
   render: () => (
     <IconFilledButton size="small">

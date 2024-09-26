@@ -4,15 +4,22 @@ import { center } from '../../../styles/mixins';
 
 const ButtonContainer = styled.button<ButtonProps>`
   ${center}
-  min-width: ${(props) => (props.size === 'medium' ? '96px' : '80px')};
-  min-height: ${(props) => (props.size === 'medium' ? '40px' : '36px')};
-  padding: 8px 16px;
+  min-width: ${(props) =>
+    props.size === 'large' ? '120px' : props.size === 'medium' ? '96px' : '80px'};
+  min-height: ${(props) =>
+    props.size === 'large' ? '48px' : props.size === 'medium' ? '40px' : '36px'};
+  padding: ${(props) => (props.size === 'large' ? '12px 16px' : '8px 16px')};
   border: 1px solid
     ${(props) => (props.variant === 'primary' ? 'var(--primary)' : 'var(--secondary)')};
-  border-radius: 24px;
+  border-radius: ${(props) => (props.size === 'large' ? '32px' : '24px')};
   background-color: var(--white);
   color: ${(props) => (props.variant === 'primary' ? 'var(--primary)' : 'var(--secondary-dark)')};
-  font-size: ${(props) => (props.size === 'medium' ? 'var(--fs-base)' : 'var(--fs-s)')};
+  font-size: ${(props) =>
+    props.size === 'large'
+      ? 'var(--fs-l)'
+      : props.size === 'medium'
+        ? 'var(--fs-base)'
+        : 'var(--fs-s)'};
 
   &:hover {
     background-color: ${(props) =>

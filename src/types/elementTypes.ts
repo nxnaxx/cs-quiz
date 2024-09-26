@@ -1,4 +1,4 @@
-export type ElementSize = 'medium' | 'small';
+export type ElementSize = 'large' | 'medium' | 'small';
 export type ElementVariant = 'primary' | 'secondary';
 
 export interface ButtonProps {

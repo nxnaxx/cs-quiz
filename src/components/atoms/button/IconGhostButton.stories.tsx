@@ -21,6 +21,14 @@ export const PrimaryIconGhostButton: Story = {
   ),
 };
 
+export const LargeIconGhostButton: Story = {
+  render: () => (
+    <IconGhostButton size="large">
+      <FontAwesomeIcon icon={faArrowRight} />
+    </IconGhostButton>
+  ),
+};
+
 export const SmallIconGhostButton: Story = {
   render: () => (
     <IconGhostButton size="small">

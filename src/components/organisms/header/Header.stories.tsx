@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import App from '../../../App';
 import Header from './Header';
+import Home from '../../../pages/Home';
 
 const meta: Meta<typeof Header> = {
   title: 'organisms/Header',
@@ -17,7 +17,7 @@ export const SampleHeader: Story = {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>
   ),
