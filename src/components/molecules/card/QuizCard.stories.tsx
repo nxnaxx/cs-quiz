@@ -14,9 +14,9 @@ export const Card1: Story = {
   args: {
     imgSrc: 'src/assets/images/javascript.png',
     title: 'JavaScript',
-    difficulty: 'easy',
+    difficulty: '쉬움',
     quizType: '객관식',
-    quizNums: 10,
+    quizNum: 10,
   },
   render: (args) => (
     <div style={{ width: '320px' }}>
@@ -29,9 +29,9 @@ export const Card2: Story = {
   args: {
     imgSrc: 'src/assets/images/library.png',
     title: '프레임워크 및 라이브러리',
-    difficulty: 'normal',
+    difficulty: '보통',
     quizType: 'OX 퀴즈',
-    quizNums: 10,
+    quizNum: 10,
   },
   render: (args) => (
     <div style={{ width: '320px' }}>

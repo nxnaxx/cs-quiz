@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { QuizCardProps } from '@data/topics';
+import { QuizCardProps } from '@data/quizCards';
 import DifficultyBar from '@atoms/bars/DifficultyBar';
 import Tag from '@atoms/tag/Tag';
 import IconFilledButton from '@atoms/button/IconFilledButton';
@@ -58,7 +58,7 @@ const TagWrapper = styled.div`
   gap: 16px;
 `;
 
-export default function QuizCard({ imgSrc, title, difficulty, quizType, quizNums }: QuizCardProps) {
+export default function QuizCard({ imgSrc, title, difficulty, quizType, quizNum }: QuizCardProps) {
   return (
     <CardContainer whileHover={{ scale: [null, 1.05, 1.05] }} transition={{ duration: 0.3 }}>
       <StepImage>
@@ -70,7 +70,7 @@ export default function QuizCard({ imgSrc, title, difficulty, quizType, quizNums
         <CardBottom>
           <TagWrapper>
             <Tag>{quizType}</Tag>
-            <Tag variant="secondary">{`${quizNums}문제`}</Tag>
+            <Tag variant="secondary">{`${quizNum}문제`}</Tag>
           </TagWrapper>
           <IconFilledButton>
             <FontAwesomeIcon icon={faArrowRight} />

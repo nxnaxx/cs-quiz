@@ -22,7 +22,7 @@ const Bar = styled.div<BarProps>`
 `;
 
 const getActiveStatus = (difficulty: Difficulty, index: number): boolean => {
-  const thresholds = { easy: 1, normal: 2, hard: 3 };
+  const thresholds = { 쉬움: 1, 보통: 2, 어려움: 3 };
   return index < thresholds[difficulty];
 };
 

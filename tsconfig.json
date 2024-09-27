@@ -22,7 +22,9 @@
       "@templates/*": ["src/components/templates/*"],
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"],
-      "@data/*": ["src/data/*"]
+      "@data/*": ["src/data/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@store/*": ["src/store/*"]
     }
   },
   "include": ["src/**/*", ".storybook/**/*"],
