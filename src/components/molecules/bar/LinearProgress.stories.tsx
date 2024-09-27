@@ -10,7 +10,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Easy: Story = {
+export const LinearProgressBar: Story = {
   args: {
     currentSteps: 2,
     totalSteps: 10,
