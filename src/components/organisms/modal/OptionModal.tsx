@@ -6,7 +6,7 @@ import { faAnglesRight, faXmark } from '@fortawesome/free-solid-svg-icons';
 import useOptionStore, { OptionStore } from '@store/useOptionStore';
 import { QuizType } from 'src/types/quizTypes';
 import { quizOptions } from '@data/quizData';
-import DifficultyBar from '@atoms/bars/DifficultyBar';
+import DifficultyBar from '@molecules/bar/DifficultyBar';
 import Select from '@molecules/select/Select';
 import Chip from '@atoms/chip/Chip';
 import FilledButton from '@atoms/button/FilledButton';

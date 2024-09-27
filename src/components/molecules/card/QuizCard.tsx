@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { QuizCardProps } from '@data/quizCards';
-import DifficultyBar from '@atoms/bars/DifficultyBar';
+import { QuizCardProps } from '@data/quizData';
+import DifficultyBar from '@molecules/bar/DifficultyBar';
 import Tag from '@atoms/tag/Tag';
 import IconFilledButton from '@atoms/button/IconFilledButton';
 

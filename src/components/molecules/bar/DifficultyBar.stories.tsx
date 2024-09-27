@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import DifficultyBar from './DifficultyBar';
 
 const meta: Meta<typeof DifficultyBar> = {
-  title: 'atoms/DifficultyBar',
+  title: 'molecules/DifficultyBar',
   component: DifficultyBar,
 };
 
@@ -12,21 +12,21 @@ type Story = StoryObj<typeof meta>;
 
 export const Easy: Story = {
   args: {
-    difficulty: 'easy',
+    difficulty: '쉬움',
   },
   render: (args) => <DifficultyBar {...args}>객관식</DifficultyBar>,
 };
 
 export const Normal: Story = {
   args: {
-    difficulty: 'normal',
+    difficulty: '보통',
   },
   render: (args) => <DifficultyBar {...args}>객관식</DifficultyBar>,
 };
 
 export const Hard: Story = {
   args: {
-    difficulty: 'hard',
+    difficulty: '어려움',
   },
   render: (args) => <DifficultyBar {...args}>객관식</DifficultyBar>,
 };
