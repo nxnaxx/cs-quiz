@@ -14,3 +14,10 @@ export interface TagProps {
   variant?: ElementVariant;
   children: string;
 }
+
+export interface ChipProps {
+  size?: ElementSize;
+  variant?: ElementVariant;
+  isActive: boolean;
+  children: string;
+}
