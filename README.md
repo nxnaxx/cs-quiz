@@ -1,7 +1,7 @@
 # CSQuizHub
 
 <div align="center">
-  <img width="293" alt="logo" src="./docs/images/main-logo.png">
+  <img width="293" alt="logo" src="https://github.com/user-attachments/assets/4c0b2ad3-025d-435c-b0b3-cdcd08421320">
 </div></br>
 
 <div align="center">
@@ -9,7 +9,11 @@
   <p>CSQuizHub에서는 직접 정한 난이도와 문제 유형으로 CS 개념을 쉽고 재미있게 즐길 수 있습니다.</p>
 </div></br>
 
-![Main Page](./docs/images/main-page.png)
+|메인 페이지|
+|:---:|
+|![Main Page](./docs/images/main-page.png)|
+
+</br>
 
 ## 목차
 
@@ -21,9 +25,16 @@
 
 ## 구현 사항
 
-![Topic Page](./docs/images/topics-page.png)
-![Modal](./docs/images/option-modal.png)
-![Active Modal](./docs/images/active-modal.png)
+|주제 선택 페이지|
+|:---:|
+|![Topic Page](./docs/images/topics-page.png)|
+
+|옵션 선택 Modal|
+|:---:|
+|![Modal](./docs/images/option-modal.png)|
+|![Active Modal](./docs/images/active-modal.png)|
+
+</br>
 
 - 디자인 수정 (brand color, thumbnail image, 메인 페이지 etc.)
 - 메인 페이지 구현, 주제 선택 페이지 구현
