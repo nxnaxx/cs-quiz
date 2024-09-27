@@ -3,7 +3,7 @@ import { motion, Variants } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import useToggleVisibility from '@hooks/useToggleVisibility';
-import useOptionStore, { OptionStore } from '@store/useSelectStore';
+import useOptionStore, { OptionStore } from '@store/useOptionStore';
 
 interface SelectProps<K extends keyof OptionStore['optionValues']> {
   isFullWidth?: boolean;
@@ -106,7 +106,7 @@ export default function Select<K extends keyof OptionStore['optionValues']>({
             transition: {
               type: 'spring',
               bounce: 0,
-              duration: 0.7,
+              duration: 0.5,
               delayChildren: 0.3,
               staggerChildren: 0.05,
             },

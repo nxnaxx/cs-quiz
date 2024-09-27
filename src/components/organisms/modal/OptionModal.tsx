@@ -1,7 +1,9 @@
+import { forwardRef } from 'react';
 import styled from '@emotion/styled';
+import { center } from '@styles/mixins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesRight, faXmark } from '@fortawesome/free-solid-svg-icons';
-import useOptionStore, { OptionStore } from '@store/useSelectStore';
+import useOptionStore, { OptionStore } from '@store/useOptionStore';
 import { QuizType } from 'src/types/quizTypes';
 import { quizOptions } from '@data/quizData';
 import DifficultyBar from '@atoms/bars/DifficultyBar';
@@ -15,7 +17,7 @@ interface OptionModalProps {
 }
 
 const Backdrop = styled.div`
-  display: block;
+  ${center}
   position: fixed;
   top: 0;
   left: 0;
@@ -26,7 +28,7 @@ const Backdrop = styled.div`
 `;
 
 const ModalContainer = styled.div`
-  width: 344px;
+  width: 360px;
   padding: 20px 32px 32px 32px;
   border-radius: 16px;
   background-color: var(--white);
@@ -94,7 +96,7 @@ const QuizTypeList = styled.div`
   gap: 12px;
 `;
 
-export default function OptionModal({ topic, onCloseModal }: OptionModalProps) {
+const OptionModal = forwardRef<HTMLDivElement, OptionModalProps>(({ topic, onCloseModal }, ref) => {
   const { optionValues, setOptionValues } = useOptionStore();
 
   const handleChipClick = <K extends keyof OptionStore['optionValues']>(
@@ -106,7 +108,7 @@ export default function OptionModal({ topic, onCloseModal }: OptionModalProps) {
 
   return (
     <Backdrop>
-      <ModalContainer>
+      <ModalContainer ref={ref}>
         <ModalTop>
           <Title>옵션 선택</Title>
           <CloseButton onClick={onCloseModal}>
@@ -149,4 +151,6 @@ export default function OptionModal({ topic, onCloseModal }: OptionModalProps) {
       </ModalContainer>
     </Backdrop>
   );
-}
+});
+
+export default OptionModal;

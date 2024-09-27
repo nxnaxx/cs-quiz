@@ -1,5 +1,7 @@
+import { Topic } from 'src/types/quizTypes';
+
 interface topicType {
-  title: string;
+  title: Topic;
   description: string;
   imgSrc: string;
 }

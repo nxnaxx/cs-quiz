@@ -5,6 +5,7 @@ interface TopicCardProps {
   imgSrc: string;
   title: string;
   description: string;
+  onCardClick: () => void;
 }
 
 const CardContainer = styled(motion.div)`
@@ -57,9 +58,13 @@ const CardDescription = styled.p`
   white-space: normal;
 `;
 
-export default function TopicCard({ imgSrc, title, description }: TopicCardProps) {
+export default function TopicCard({ imgSrc, title, description, onCardClick }: TopicCardProps) {
   return (
-    <CardContainer whileHover={{ scale: [null, 1.05, 1.05] }} transition={{ duration: 0.3 }}>
+    <CardContainer
+      whileHover={{ scale: [null, 1.05, 1.05] }}
+      transition={{ duration: 0.3 }}
+      onClick={onCardClick}
+    >
       <Thumbnail>
         <img src={imgSrc} alt={title} />
       </Thumbnail>

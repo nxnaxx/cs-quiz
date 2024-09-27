@@ -1,8 +1,9 @@
 import { create } from 'zustand';
-import { Difficulty, QuizNum, QuizType } from 'src/types/quizTypes';
+import { Difficulty, QuizNum, QuizType, Topic } from 'src/types/quizTypes';
 
 export interface OptionStore {
   optionValues: {
+    topic?: Topic;
     difficulty: Difficulty;
     quizNum: QuizNum;
     quizType: QuizType;
@@ -11,15 +12,19 @@ export interface OptionStore {
     key: K,
     value: OptionStore['optionValues'][K],
   ) => void;
+  resetOptions: () => void;
   submitData: () => void;
 }
 
+const initialOptionValues: OptionStore['optionValues'] = {
+  topic: undefined,
+  difficulty: '쉬움',
+  quizNum: 10,
+  quizType: '객관식',
+};
+
 const useOptionStore = create<OptionStore>((set) => ({
-  optionValues: {
-    difficulty: '쉬움',
-    quizNum: 10,
-    quizType: '객관식',
-  },
+  optionValues: initialOptionValues,
   setOptionValues: (key, value) =>
     set((state) => ({
       optionValues: {
@@ -27,6 +32,7 @@ const useOptionStore = create<OptionStore>((set) => ({
         [key]: value,
       },
     })),
+  resetOptions: () => set({ optionValues: initialOptionValues }),
   submitData: () => {
     const { optionValues } = useOptionStore.getState();
     console.log('submit', optionValues);
