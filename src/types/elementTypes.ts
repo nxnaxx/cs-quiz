@@ -5,6 +5,7 @@ export interface ButtonProps {
   size?: ElementSize;
   variant?: ElementVariant;
   disabled?: boolean;
+  isFullWidth?: boolean;
   children: React.ReactNode;
   onClick?: () => void;
 }
@@ -15,7 +16,7 @@ export interface TagProps {
   children: string;
 }
 
-export interface ChipProps {
+export interface ChipStyleProps {
   size?: ElementSize;
   variant?: ElementVariant;
   isActive: boolean;

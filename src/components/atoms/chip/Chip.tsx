@@ -1,8 +1,12 @@
 import styled from '@emotion/styled';
 import { center } from '@styles/mixins';
-import { ChipProps } from 'src/types/elementTypes';
+import { ChipStyleProps } from 'src/types/elementTypes';
 
-const ChipContainer = styled.div<ChipProps>`
+interface ChipProps extends ChipStyleProps {
+  onChipClick?: () => void;
+}
+
+const ChipContainer = styled.div<ChipStyleProps>`
   ${center}
   display: inline-flex;
   min-width: ${(props) => (props.size === 'medium' ? '72px' : '64px')};
@@ -43,10 +47,11 @@ export default function Chip({
   size = 'medium',
   variant = 'primary',
   isActive,
+  onChipClick,
   children,
 }: ChipProps) {
   return (
-    <ChipContainer size={size} variant={variant} isActive={isActive}>
+    <ChipContainer size={size} variant={variant} isActive={isActive} onClick={onChipClick}>
       {children}
     </ChipContainer>
   );

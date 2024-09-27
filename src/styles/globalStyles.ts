@@ -58,6 +58,7 @@ export const globalStyles = css`
     --dark-50: #ebeef4;
     --background: #f6f9ff;
     --white: #ffffff;
+    --backdrop: rgb(36 42 56 / 40%);
 
     /* Shadow */
     --shadow1: 0 8px 16px 0 rgb(156 162 180 / 20%);

@@ -4,6 +4,7 @@ import { ButtonProps } from 'src/types/elementTypes';
 
 const ButtonContainer = styled.button<ButtonProps>`
   ${center}
+  width: ${(props) => (props.isFullWidth ? '100%' : 'auto')};
   min-width: ${(props) =>
     props.size === 'large' ? '120px' : props.size === 'medium' ? '96px' : '80px'};
   min-height: ${(props) =>
@@ -36,11 +37,18 @@ export default function FilledButton({
   size = 'medium',
   variant = 'primary',
   disabled = false,
+  isFullWidth = false,
   children,
   onClick,
 }: ButtonProps) {
   return (
-    <ButtonContainer size={size} variant={variant} disabled={disabled} onClick={onClick}>
+    <ButtonContainer
+      size={size}
+      variant={variant}
+      disabled={disabled}
+      isFullWidth={isFullWidth}
+      onClick={onClick}
+    >
       {children}
     </ButtonContainer>
   );

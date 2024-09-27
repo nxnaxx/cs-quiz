@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { inner } from '@styles/mixins';
-import { quizCards } from '@data/quizCards';
+import { quizCards } from '@data/quizData';
 import QuizCard from '@molecules/card/QuizCard';
 
 const TryItContainer = styled.div`

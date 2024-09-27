@@ -31,3 +31,15 @@ export const quizCards: QuizCardProps[] = [
     quizNum: 10,
   },
 ];
+
+interface optionDatatype {
+  difficulty: Difficulty[];
+  quizNum: QuizNum[];
+  quizType: QuizType[];
+}
+
+export const quizOptions: optionDatatype = {
+  difficulty: ['쉬움', '보통', '어려움'],
+  quizNum: [5, 10, 15],
+  quizType: ['객관식', 'OX 퀴즈', '빈칸 맞추기'],
+};

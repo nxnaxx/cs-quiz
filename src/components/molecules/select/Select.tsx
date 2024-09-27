@@ -6,6 +6,7 @@ import useToggleVisibility from '@hooks/useToggleVisibility';
 import useOptionStore, { OptionStore } from '@store/useSelectStore';
 
 interface SelectProps<K extends keyof OptionStore['optionValues']> {
+  isFullWidth?: boolean;
   selectId: K;
   options: OptionStore['optionValues'][K][];
 }
@@ -66,6 +67,7 @@ const itemVariants: Variants = {
 };
 
 export default function Select<K extends keyof OptionStore['optionValues']>({
+  isFullWidth = false,
   selectId,
   options,
 }: SelectProps<K>) {
@@ -79,7 +81,12 @@ export default function Select<K extends keyof OptionStore['optionValues']>({
   };
 
   return (
-    <SelectContainer ref={useVisibilityRef} initial={false} animate={isVisible ? 'open' : 'closed'}>
+    <SelectContainer
+      ref={useVisibilityRef}
+      initial={false}
+      animate={isVisible ? 'open' : 'closed'}
+      style={{ zIndex: isVisible ? '1020' : '0', width: isFullWidth ? '100%' : '240px' }}
+    >
       <SelectField whileTap={{ scale: 0.97 }} onClick={() => handleToggleVisibility()}>
         {optionValues[selectId]}
         <DropdownButton
