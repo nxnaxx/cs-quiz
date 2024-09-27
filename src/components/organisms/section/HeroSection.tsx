@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { inner } from '@styles/mixins';
 import FilledButton from '@atoms/button/FilledButton';
+import { useNavigate } from 'react-router-dom';
 
 const HeroContainer = styled.section`
   width: 100%;
@@ -49,6 +50,12 @@ const HeroImage = styled.div`
 `;
 
 export default function HeroSection() {
+  const navigate = useNavigate();
+
+  const handleStartClick = () => {
+    navigate('/topics');
+  };
+
   return (
     <HeroContainer>
       <HeroWrapper>
@@ -62,7 +69,9 @@ export default function HeroSection() {
             CSQuizHub에서 재미있는 퀴즈를 통해 CS 지식을 쉽게 배우고 즐겨보세요! 직접 정한 난이도와
             문제 유형으로 문제를 풀며 CS 개념을 자연스럽게 익히고, 새로운 스킬을 쌓아보세요.
           </HeroDescription>
-          <FilledButton size="large">시작하기</FilledButton>
+          <FilledButton size="large" onClick={handleStartClick}>
+            시작하기
+          </FilledButton>
         </HeroContent>
         <HeroImage>
           <img src="src/assets/images/hero-img.png" alt="hero image" />

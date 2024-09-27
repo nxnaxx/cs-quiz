@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react';
-import IconFilledButton from './IconFilledButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import IconGhostButton from './IconGhostButton';
@@ -23,7 +22,7 @@ export const PrimaryIconGhostButton: Story = {
 
 export const LargeIconGhostButton: Story = {
   render: () => (
-    <IconGhostButton size="large">
+    <IconGhostButton size="large" onClick={() => {}}>
       <FontAwesomeIcon icon={faArrowRight} />
     </IconGhostButton>
   ),
