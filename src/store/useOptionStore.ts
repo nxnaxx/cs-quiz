@@ -3,7 +3,7 @@ import { Difficulty, QuizNum, QuizType, Topic } from 'src/types/quizTypes';
 
 export interface OptionStore {
   optionValues: {
-    topic?: Topic;
+    topic: Topic | undefined;
     difficulty: Difficulty;
     quizNum: QuizNum;
     quizType: QuizType;

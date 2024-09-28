@@ -16,7 +16,7 @@ const CardContainer = styled(motion.div)`
   cursor: pointer;
 
   &:hover {
-    box-shadow: var(--color-shadow);
+    box-shadow: var(--color-shadow1);
   }
 `;
 
