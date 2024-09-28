@@ -11,7 +11,7 @@ interface MultipleOptinoListProps {
 const MultipleList = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
 `;
 
 export default function MultipleOptionList({ question, multipleOptions }: MultipleOptinoListProps) {

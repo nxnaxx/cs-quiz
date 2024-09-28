@@ -1,7 +1,7 @@
+import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { inner } from '@styles/mixins';
 import FilledButton from '@atoms/button/FilledButton';
-import { useNavigate } from 'react-router-dom';
 
 const HeroContainer = styled.section`
   width: 100%;

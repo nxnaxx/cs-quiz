@@ -22,6 +22,7 @@ const OptionContainer = styled(motion.li)<ActiveOptionProps>`
   align-items: center;
   width: 100%;
   padding: 16px 24px;
+  border: 1px solid var(--dark-50);
   border-radius: 8px;
   box-shadow: ${(props) => (props.isSelected ? 'var(--color-shadow2)' : 'var(--shadow2)')};
   cursor: pointer;
