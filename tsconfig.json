@@ -13,6 +13,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
     "paths": {
       "@assets/*": ["src/assets/*"],
@@ -27,7 +28,7 @@
       "@store/*": ["src/store/*"]
     }
   },
-  "include": ["src/**/*", ".storybook/**/*"],
+  "include": ["src/**/*", ".storybook/**/*", "src/svg.d.ts"],
   "exclude": ["node_modules", "dist"],
-  "types": ["node"]
+  "types": ["node", "vite-plugin-svgr/client"]
 }

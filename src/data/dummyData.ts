@@ -84,3 +84,67 @@ export const sampleMultipleData: QuizStore['quizData'] = [
     commentary: 'JavaScript에서 함수를 정의할 때 function 키워드를 사용합니다.',
   },
 ];
+
+export const sampleTrueFalseData: QuizStore['quizData'] = [
+  {
+    question: 'JavaScript는 웹 페이지의 레이아웃을 담당하는 스타일 시트 언어이다.',
+    answer: false,
+    userAnswer: null,
+    commentary: 'JavaScript는 웹 페이지의 동적인 요소를 다루는 프로그래밍 언어입니다.',
+  },
+  {
+    question: "JavaScript의 확장자는 '.js'이다.",
+    answer: true,
+    userAnswer: null,
+    commentary: '',
+  },
+  {
+    question: "JavaScript는 변수를 선언할 때 'var', 'let', 'const' 키워드를 사용한다.",
+    answer: true,
+    userAnswer: null,
+    commentary: '',
+  },
+  {
+    question: "JavaScript에서 '===' 연산자는 데이터 타입을 비교하지 않고 값만 비교한다.",
+    answer: false,
+    userAnswer: null,
+    commentary: '=== 연산자는 값과 함께 데이터 타입도 비교합니다.',
+  },
+  {
+    question:
+      'JavaScript의 배열(Array)은 정해진 크기를 가지고 있어 동적으로 크기를 조절할 수 없다.',
+    answer: false,
+    userAnswer: null,
+    commentary: 'JavaScript 배열은 동적으로 크기를 조절할 수 있습니다.',
+  },
+  {
+    question: "JavaScript에서 'if-else'문은 조건에 따라 코드 블록을 실행하거나 건너뛸 수 있다.",
+    answer: true,
+    userAnswer: null,
+    commentary: '',
+  },
+  {
+    question: "JavaScript에서 'null'은 값이 정의되지 않은 상태를 나타낸다.",
+    answer: true,
+    userAnswer: null,
+    commentary: '',
+  },
+  {
+    question: "JavaScript에서 'parseInt()' 함수는 문자열을 정수로 변환할 때 사용한다.",
+    answer: true,
+    userAnswer: null,
+    commentary: '',
+  },
+  {
+    question: "JavaScript에서 'let' 키워드를 사용한 변수는 재할당이 불가능하다.",
+    answer: false,
+    userAnswer: null,
+    commentary: 'let으로 선언된 변수는 재할당이 가능합니다.',
+  },
+  {
+    question: "JavaScript에서 'NaN'은 'Not a Number'의 준말로, 숫자가 아님을 나타내는 값이다.",
+    answer: true,
+    userAnswer: null,
+    commentary: '',
+  },
+];

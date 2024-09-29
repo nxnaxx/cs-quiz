@@ -66,7 +66,7 @@ export default function QuizTemplate({
   };
 
   const handleNextClick = () => {
-    if (quizData && quizData[currentQuizNum - 1].userAnswer) {
+    if (quizData && quizData[currentQuizNum - 1].userAnswer !== null) {
       setNextQuiz();
     } else setError('userAnswer', '답변을 선택해주세요.');
   };

@@ -34,6 +34,7 @@
     "@storybook/addon-links": "^8.3.2",
     "@storybook/addon-onboarding": "^8.3.2",
     "@storybook/blocks": "^8.3.2",
+    "@storybook/builder-vite": "^8.3.4",
     "@storybook/react": "^8.3.2",
     "@storybook/react-vite": "^8.3.2",
     "@storybook/test": "^8.3.2",
@@ -52,6 +53,7 @@
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1",
+    "vite-plugin-svgr": "^4.2.0",
     "vite-tsconfig-paths": "^5.0.1"
   },
   "eslintConfig": {
