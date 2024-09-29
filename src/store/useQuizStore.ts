@@ -8,7 +8,7 @@ export interface Multiple {
   commentary: string;
 }
 
-export interface TrueOrFalse {
+export interface TrueFalse {
   question: string;
   answer: boolean;
   userAnswer: boolean | null;
@@ -23,7 +23,7 @@ export interface FillBlank {
 }
 
 export interface QuizStore {
-  quizData: Multiple[] | TrueOrFalse[] | FillBlank[] | undefined;
+  quizData: Multiple[] | TrueFalse[] | FillBlank[] | undefined;
   currentQuizNum: number;
   setQuizData: (newData: QuizStore['quizData']) => void;
   setUserAnswer: (question: string, userAnswer: boolean | string | null) => void;
@@ -31,6 +31,9 @@ export interface QuizStore {
   setNextQuiz: () => void;
   resetQuizData: () => void;
   submitData: () => void;
+  errors: { [key: string]: string };
+  setError: (key: string, message: string) => void;
+  clearErrors: (key: string) => void;
 }
 
 const useQuizStore = create<QuizStore>((set) => ({
@@ -63,6 +66,17 @@ const useQuizStore = create<QuizStore>((set) => ({
     const { quizData } = useQuizStore.getState();
     console.log('submit', quizData);
   },
+  errors: {},
+  setError: (key, message) =>
+    set((state) => ({
+      errors: { ...state.errors, [key]: message },
+    })),
+  clearErrors: (key) =>
+    set((state) => {
+      const newErrors = { ...state.errors };
+      delete newErrors[key];
+      return { errors: newErrors };
+    }),
 }));
 
 export default useQuizStore;

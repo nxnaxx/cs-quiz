@@ -14,7 +14,8 @@ export default function MultipleSection({
   return (
     <QuizTemplate currentQuizNum={currentQuizNum} totalQuizNum={totalQuizNum} question={question}>
       <MultipleOptionList
-        question="다음 중 JavaScript에서 사용되는 화살표 함수의 특징으로 올바르지 않은 것은?"
+        question={question}
+        currentQuizNum={currentQuizNum}
         multipleOptions={options}
       />
     </QuizTemplate>
