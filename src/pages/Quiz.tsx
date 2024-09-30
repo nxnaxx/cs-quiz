@@ -1,7 +1,7 @@
 import MainTemplate from '@templates/MainTemplate';
 import { QuizType } from 'src/types/quizTypes';
-import MultipleSection from '@organisms/section/MultipleSection';
 import useQuizStore, { FillBlank, Multiple, TrueFalse } from '@store/useQuizStore';
+import MultipleSection from '@organisms/section/MultipleSection';
 import TrueFalseSection from '@organisms/section/TrueFalseSection';
 import FillBlankSection from '@organisms/section/FillBlankSection';
 

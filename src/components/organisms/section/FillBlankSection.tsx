@@ -35,7 +35,7 @@ export default function FillBlankSection({
   };
 
   const handleNextClick = () => {
-    setUserAnswer(currentQuizNum - 1, inputValue);
+    setUserAnswer(currentQuizNum - 1, inputValue.trim());
     setNextQuiz();
     setInputValue('');
   };
