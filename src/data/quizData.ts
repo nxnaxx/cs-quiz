@@ -25,7 +25,7 @@ export const quizCards: QuizCardProps[] = [
   },
   {
     imgSrc: 'src/assets/images/algorithm.png',
-    title: '알고리즘',
+    title: '알고리즘 및 자료구조',
     difficulty: '보통',
     quizType: '빈칸 맞추기',
     quizNum: 10,

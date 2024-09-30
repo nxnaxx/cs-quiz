@@ -116,9 +116,9 @@ export default function QuizResultItem({
             {!isCorrect &&
               (quizType === 'OX 퀴즈' ? (
                 <CorrectAnswer>{answer === true ? 'O' : 'X'}</CorrectAnswer>
-              ) : quizType === '빈칸 맞추기' ? (
+              ) : quizType === '빈칸 맞추기' && Array.isArray(answer) ? (
                 <CorrectAnswer>
-                  {(answer as string[]).map((item, i) => {
+                  {answer.map((item, i) => {
                     return i === 0 ? `${item}` : `, ${item}`;
                   })}
                 </CorrectAnswer>

@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
@@ -61,6 +62,7 @@ export default function QuizTemplate({
   children,
 }: QuizTemplateProps) {
   const { quizData, setPrevQuiz, setNextQuiz, errors, setError } = useQuizStore();
+  const navigate = useNavigate();
 
   const handlePrevClick = () => {
     setPrevQuiz();
@@ -73,6 +75,16 @@ export default function QuizTemplate({
         Array.isArray(quizData[currentQuizNum - 1].answer))
     ) {
       setNextQuiz();
+    } else setError('userAnswer', '답변을 선택해주세요.');
+  };
+
+  const handleSubmitClick = () => {
+    if (
+      quizData &&
+      (quizData[currentQuizNum - 1].userAnswer !== null ||
+        Array.isArray(quizData[currentQuizNum - 1].answer))
+    ) {
+      navigate('/results');
     } else setError('userAnswer', '답변을 선택해주세요.');
   };
 
@@ -95,7 +107,7 @@ export default function QuizTemplate({
           이전
         </GhostButton>
         {currentQuizNum === totalQuizNum ? (
-          <FilledButton>제출</FilledButton>
+          <FilledButton onClick={handleSubmitClick}>제출</FilledButton>
         ) : (
           <FilledButton onClick={onNextClick || handleNextClick}>다음</FilledButton>
         )}

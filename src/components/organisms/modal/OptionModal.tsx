@@ -2,9 +2,10 @@ import { forwardRef } from 'react';
 import styled from '@emotion/styled';
 import { center } from '@styles/mixins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAnglesRight, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import AngleArrowSVG from '@assets/icons/angle-arrow.svg?react';
 import useOptionStore, { OptionStore } from '@store/useOptionStore';
-import { QuizType } from 'src/types/quizTypes';
+import { QuizType, Topic } from 'src/types/quizTypes';
 import { quizOptions } from '@data/quizData';
 import DifficultyBar from '@molecules/bar/DifficultyBar';
 import Select from '@molecules/select/Select';
@@ -12,7 +13,7 @@ import Chip from '@atoms/chip/Chip';
 import FilledButton from '@atoms/button/FilledButton';
 
 interface OptionModalProps {
-  topic: string;
+  topic: Topic;
   onCloseModal: () => void;
 }
 
@@ -76,7 +77,13 @@ const SelectTopic = styled.div`
   font-size: var(--fs-l);
 `;
 
-const Topic = styled.p`
+const AngleArrowIcon = styled(AngleArrowSVG)`
+  width: 24px;
+  height: 24px;
+  color: var(--secondary-dark);
+`;
+
+const TopicLabel = styled.p`
   color: var(--dark-700);
   font-weight: var(--fw-m);
 `;
@@ -117,8 +124,8 @@ const OptionModal = forwardRef<HTMLDivElement, OptionModalProps>(({ topic, onClo
         </ModalTop>
         <ModalContent>
           <SelectTopic>
-            <FontAwesomeIcon icon={faAnglesRight} />
-            <Topic>{topic}</Topic>
+            <AngleArrowIcon />
+            <TopicLabel>{topic}</TopicLabel>
           </SelectTopic>
           <OptionWrapper>
             <OptionLabel>

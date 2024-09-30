@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import { center } from '@styles/mixins';
 import { motion } from 'framer-motion';
 import QuizTemplate, { QuizTemplateProps } from '@templates/QuizTemplate';
-import CircleMarkSVG from '@assets/images/circle-mark.svg?react';
-import CrossMarkSVG from '@assets/images/cross-mark.svg?react';
+import CircleMarkSVG from '@assets/icons/circle-mark.svg?react';
+import CrossMarkSVG from '@assets/icons/cross-mark.svg?react';
 import useQuizStore from '@store/useQuizStore';
 
 interface TrueFalseSectionProps extends QuizTemplateProps {}
