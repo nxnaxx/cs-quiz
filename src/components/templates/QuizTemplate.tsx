@@ -15,8 +15,7 @@ export interface QuizTemplateProps {
 }
 
 const QuizContainer = styled.section`
-  width: 100%;
-  max-width: 800px;
+  width: 720px;
   padding: 40px;
   border-radius: 24px;
   background-color: var(--white);
