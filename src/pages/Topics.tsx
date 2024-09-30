@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import styled from '@emotion/styled';
 import { topics } from '@data/topics';
 import MainTemplate from '@templates/MainTemplate';
@@ -6,7 +7,6 @@ import OptionModal from '@organisms/modal/OptionModal';
 import useOptionStore, { OptionStore } from '@store/useOptionStore';
 import usePreventScroll from '@hooks/usePreventScroll';
 import { Topic } from 'src/types/quizTypes';
-import { useEffect } from 'react';
 
 const TopicTitle = styled.h2`
   margin-bottom: 48px;
