@@ -10,6 +10,7 @@ export interface QuizTemplateProps {
   currentQuizNum: number;
   totalQuizNum: number;
   question: string;
+  onNextClick?: () => void;
   children?: React.ReactNode;
 }
 
@@ -57,6 +58,7 @@ export default function QuizTemplate({
   currentQuizNum,
   totalQuizNum,
   question,
+  onNextClick,
   children,
 }: QuizTemplateProps) {
   const { quizData, setPrevQuiz, setNextQuiz, errors, setError } = useQuizStore();
@@ -66,7 +68,11 @@ export default function QuizTemplate({
   };
 
   const handleNextClick = () => {
-    if (quizData && quizData[currentQuizNum - 1].userAnswer !== null) {
+    if (
+      quizData &&
+      (quizData[currentQuizNum - 1].userAnswer !== null ||
+        Array.isArray(quizData[currentQuizNum - 1].answer))
+    ) {
       setNextQuiz();
     } else setError('userAnswer', '답변을 선택해주세요.');
   };
@@ -79,7 +85,7 @@ export default function QuizTemplate({
         <Question>{question}</Question>
       </QuizTop>
       {children}
-      {errors.userAnswer && typeof errors.userAnswer === 'string' && (
+      {errors.userAnswer && (
         <ValidationMessage>
           <FontAwesomeIcon icon={faCircleExclamation} />
           {errors.userAnswer}
@@ -92,7 +98,7 @@ export default function QuizTemplate({
         {currentQuizNum === totalQuizNum ? (
           <FilledButton>제출</FilledButton>
         ) : (
-          <FilledButton onClick={handleNextClick}>다음</FilledButton>
+          <FilledButton onClick={onNextClick || handleNextClick}>다음</FilledButton>
         )}
       </ButtonWrapper>
     </QuizContainer>

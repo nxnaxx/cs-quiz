@@ -148,3 +148,78 @@ export const sampleTrueFalseData: QuizStore['quizData'] = [
     commentary: '',
   },
 ];
+
+export const sampleFillBlankData: QuizStore['quizData'] = [
+  {
+    question: 'JavaScript에서 변수를 선언할 때 사용하는 키워드는 _____이다.',
+    answer: ['let', '변수'],
+    userAnswer: null,
+    commentary:
+      'JavaScript에서 변수를 선언할 때는 let 키워드를 사용하며, 변수란 값이 저장되는 공간을 가리킨다.',
+  },
+  {
+    question: '다음 중 JavaScript에서 사용되는 데이터 타입이 아닌 것은? _____',
+    answer: ['Boolean', '부동소수'],
+    userAnswer: null,
+    commentary:
+      'JavaScript에서 부동소수 (floating point)는 데이터 타입이 아니며, Boolean은 참과 거짓을 표현하는 데이터 타입이다.',
+  },
+  {
+    question: 'JavaScript에서 함수를 선언할 때 사용하는 키워드는 _____이다.',
+    answer: ['function', '함수'],
+    userAnswer: null,
+    commentary:
+      'JavaScript에서 함수를 선언할 때는 function 키워드를 사용하며, 함수는 일련의 작업을 수행하는 코드 블록이다.',
+  },
+  {
+    question: '다음 중 JavaScript 함수 외부에서 정의된 변수를 참조하는 개념은 _____이다.',
+    answer: ['클로저', 'closure'],
+    userAnswer: null,
+    commentary:
+      '클로저는 JavaScript 함수 외부에서 정의된 변수들에 대한 참조를 유지하는 개념으로, 함수가 변수를 기억하여 사용하는 메커니즘을 가리킨다.',
+  },
+  {
+    question:
+      'JavaScript에서 배열의 각 요소를 순회하면서 작업을 수행하기 위해 사용되는 메서드는 _____이다.',
+    answer: ['forEach', '각'],
+    userAnswer: null,
+    commentary:
+      'forEach 메서드는 배열의 각 요소를 순회하면서 지정된 작업을 수행하는 메서드이며, 반복문을 대체할 수 있다.',
+  },
+  {
+    question: '다음 중 JavaScript에서 사용되는 비동기 처리를 위한 객체는 _____이다.',
+    answer: ['Promise', '프로미스'],
+    userAnswer: null,
+    commentary:
+      'Promise는 JavaScript에서 비동기 작업을 쉽게 처리하기 위한 객체로, 성공 또는 실패 시의 처리를 정의할 수 있다.',
+  },
+  {
+    question:
+      'JavaScript에서 객체의 특정 속성을 가져오거나 설정하기 위해 사용되는 연산자는 _____이다.',
+    answer: ['도트', 'dot'],
+    userAnswer: null,
+    commentary:
+      '도트 연산자는 객체의 특정 속성을 가져오거나 설정하는 데 사용되며, 객체의 속성에 접근할 때 유용하다.',
+  },
+  {
+    question: 'JavaScript에서 조건문을 표현하기 위해 사용되는 키워드는 _____이다.',
+    answer: ['if', '만약'],
+    userAnswer: null,
+    commentary:
+      'JavaScript에서 조건문을 표현할 때 if 키워드를 사용하며, 주어진 조건에 따라 프로그램의 흐름을 제어할 수 있다.',
+  },
+  {
+    question: '다음 중 JavaScript에서 사용되는 반복문이 아닌 것은? _____',
+    answer: ['repeat', '반복'],
+    userAnswer: null,
+    commentary:
+      'JavaScript에서 repeat 반복문은 사용되지 않으며, for, while, do-while 반복문이 있습니다.',
+  },
+  {
+    question: 'JavaScript에서 예외 처리를 위해 사용되는 키워드는 _____이다.',
+    answer: ['try', '시도'],
+    userAnswer: null,
+    commentary:
+      'JavaScript에서 예외 처리를 위해 try 키워드를 사용하여 예외 발생 가능한 코드를 묶어 처리할 수 있으며, catch와 finally 블록과 함께 사용된다.',
+  },
+];

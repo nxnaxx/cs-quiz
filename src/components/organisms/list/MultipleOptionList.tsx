@@ -3,7 +3,6 @@ import useQuizStore from '@store/useQuizStore';
 import MultipleOption from '@molecules/item/MultipleOption';
 
 interface MultipleOptinoListProps {
-  question: string;
   currentQuizNum: number;
   multipleOptions: string[];
 }
@@ -15,28 +14,26 @@ const MultipleList = styled.ul`
 `;
 
 export default function MultipleOptionList({
-  question,
   currentQuizNum,
   multipleOptions,
 }: MultipleOptinoListProps) {
   const { quizData, setUserAnswer, clearErrors } = useQuizStore();
 
-  const handleOptionClick = (question: string, option: string) => {
-    setUserAnswer(question, option);
+  const handleOptionClick = (option: string) => {
+    setUserAnswer(currentQuizNum - 1, option);
     clearErrors('userAnswer');
   };
 
   return (
     <MultipleList>
-      {quizData &&
-        multipleOptions.map((option) => (
-          <MultipleOption
-            key={option}
-            content={option}
-            isSelected={quizData[currentQuizNum - 1].userAnswer === option}
-            onOptionClick={() => handleOptionClick(question, option)}
-          />
-        ))}
+      {multipleOptions.map((option) => (
+        <MultipleOption
+          key={option}
+          content={option}
+          isSelected={quizData?.[currentQuizNum - 1].userAnswer === option}
+          onOptionClick={() => handleOptionClick(option)}
+        />
+      ))}
     </MultipleList>
   );
 }

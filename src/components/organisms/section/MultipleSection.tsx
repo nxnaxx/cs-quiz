@@ -13,11 +13,7 @@ export default function MultipleSection({
 }: MultipleSectionProps) {
   return (
     <QuizTemplate currentQuizNum={currentQuizNum} totalQuizNum={totalQuizNum} question={question}>
-      <MultipleOptionList
-        question={question}
-        currentQuizNum={currentQuizNum}
-        multipleOptions={options}
-      />
+      <MultipleOptionList currentQuizNum={currentQuizNum} multipleOptions={options} />
     </QuizTemplate>
   );
 }

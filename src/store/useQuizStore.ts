@@ -26,7 +26,7 @@ export interface QuizStore {
   quizData: Multiple[] | TrueFalse[] | FillBlank[] | undefined;
   currentQuizNum: number;
   setQuizData: (newData: QuizStore['quizData']) => void;
-  setUserAnswer: (question: string, userAnswer: boolean | string | null) => void;
+  setUserAnswer: (quizIdx: number, userAnswer: boolean | string | null) => void;
   setPrevQuiz: () => void;
   setNextQuiz: () => void;
   resetQuizData: () => void;
@@ -40,21 +40,18 @@ const useQuizStore = create<QuizStore>((set) => ({
   quizData: undefined,
   currentQuizNum: 1,
   setQuizData: (newData) => set({ quizData: newData }),
-  setUserAnswer: (question: string, userAnswer: boolean | string | null) => {
+  setUserAnswer: (quizIdx: number, userAnswer: boolean | string | null) => {
     set((state) => {
       if (!state.quizData) return state;
 
-      const updatedQuizData = state.quizData.map((quiz) => {
-        if (quiz.question === question) {
-          if ('options' in quiz) {
-            return { ...quiz, userAnswer: userAnswer as string };
-          } else if (typeof quiz.answer === 'boolean') {
-            return { ...quiz, userAnswer: userAnswer as boolean };
-          }
-          return { ...quiz, userAnswer: userAnswer as string | null };
-        }
-        return quiz;
-      });
+      const updatedQuizData = [...state.quizData];
+      const currentQuiz = updatedQuizData[quizIdx];
+
+      if ('options' in currentQuiz) {
+        updatedQuizData[quizIdx] = { ...currentQuiz, userAnswer: userAnswer as string };
+      } else if (typeof currentQuiz.answer === 'boolean') {
+        updatedQuizData[quizIdx] = { ...currentQuiz, userAnswer: userAnswer as boolean };
+      } else updatedQuizData[quizIdx] = { ...currentQuiz, userAnswer: userAnswer as string | null };
 
       return { quizData: updatedQuizData as QuizStore['quizData'] };
     });
