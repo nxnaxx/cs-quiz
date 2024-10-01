@@ -5,6 +5,7 @@ import useOptionStore from '@store/useOptionStore';
 import { sampleMultipleData } from '@data/dummyData';
 import Home from './pages/Home';
 import Topics from './pages/Topics';
+import Loading from '@pages/Loading';
 import Quiz from '@pages/Quiz';
 import QuizResults from '@pages/QuizResults';
 
@@ -34,6 +35,7 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="/topics" element={<Topics />} />
+        <Route path="/loading" element={<Loading />} />
         <Route path="/quiz" element={<Quiz quizType="객관식" />} />
         <Route path="/results" element={<QuizResults />} />
       </Routes>

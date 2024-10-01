@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { center } from '@styles/mixins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -105,12 +106,19 @@ const QuizTypeList = styled.div`
 
 const OptionModal = forwardRef<HTMLDivElement, OptionModalProps>(({ topic, onCloseModal }, ref) => {
   const { optionValues, setOptionValues } = useOptionStore();
+  const navigate = useNavigate();
 
   const handleChipClick = <K extends keyof OptionStore['optionValues']>(
     id: K,
     value: OptionStore['optionValues'][K],
   ) => {
     setOptionValues(id, value);
+  };
+
+  const handleSubmitClick = () => {
+    if (!Object.values(optionValues).some((value) => value === undefined || value === null)) {
+      navigate('/loading');
+    }
   };
 
   return (
@@ -154,7 +162,9 @@ const OptionModal = forwardRef<HTMLDivElement, OptionModalProps>(({ topic, onClo
             </QuizTypeList>
           </OptionWrapper>
         </ModalContent>
-        <FilledButton isFullWidth>퀴즈 생성</FilledButton>
+        <FilledButton isFullWidth onClick={handleSubmitClick}>
+          퀴즈 생성
+        </FilledButton>
       </ModalContainer>
     </Backdrop>
   );

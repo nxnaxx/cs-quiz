@@ -1,4 +1,4 @@
-import { css } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 
 export const center = css`
   display: flex;
@@ -9,4 +9,28 @@ export const center = css`
 export const inner = css`
   max-width: 1200px;
   margin: 0 auto;
+`;
+
+export const cubeSlide = keyframes`
+  0% {
+    transform: translate(var(--sx), var(--sy));
+  }
+  65% {
+    transform: translate(var(--ex), var(--sy));
+  }
+  95%, 100% {
+    transform: translate(var(--ex), var(--ey));
+  }
+`;
+
+export const dotsLoad = keyframes`
+  20% {
+    content: ".";
+  }
+  40% {
+    content: "..";
+  }
+  80%, 100% {
+    content: "...";
+  }
 `;
