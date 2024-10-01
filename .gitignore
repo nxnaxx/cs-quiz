@@ -12,6 +12,9 @@ build/
 .env.local
 .env.*.local
 
+# TypeScript build info files
+*.tsbuildinfo
+
 # Logs
 logs
 *.log
