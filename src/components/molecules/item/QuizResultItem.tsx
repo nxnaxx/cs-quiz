@@ -16,7 +16,7 @@ interface QuizResultProps {
   commentary: string;
 }
 
-const Answer = styled.p``;
+const UserAnswer = styled.p``;
 
 const MarkIcon = styled.div`
   font-size: 32px;
@@ -32,7 +32,7 @@ const QuizResultItemContainer = styled.li<ResultStyleProps>`
   border-radius: 8px;
   box-shadow: var(--shadow2);
 
-  ${Answer} {
+  ${UserAnswer} {
     color: ${(props) => (props.isCorrect ? 'var(--dark-700)' : 'var(--dark-200)')};
     text-decoration: ${(props) => (props.isCorrect ? 'none' : 'line-through')};
   }
@@ -112,10 +112,10 @@ export default function QuizResultItem({
         <AnswerWrapper>
           <AnswerNum>A{questionNum}</AnswerNum>
           <AnswerContent>
-            {quizType === 'OX 퀴즈' && isCorrect ? (
-              <Answer>{userAnswer === true ? 'O' : 'X'}</Answer>
+            {quizType === 'OX 퀴즈' ? (
+              <UserAnswer>{userAnswer === true ? 'O' : 'X'}</UserAnswer>
             ) : (
-              <Answer>{userAnswer}</Answer>
+              <UserAnswer>{userAnswer}</UserAnswer>
             )}
             {!isCorrect &&
               (quizType === 'OX 퀴즈' ? (
