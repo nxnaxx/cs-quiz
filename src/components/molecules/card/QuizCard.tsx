@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,6 +7,9 @@ import { QuizCardProps } from '@data/quizData';
 import DifficultyBar from '@molecules/bar/DifficultyBar';
 import Tag from '@atoms/tag/Tag';
 import IconFilledButton from '@atoms/button/IconFilledButton';
+import useQuizStore from '@store/useQuizStore';
+import useOptionStore from '@store/useOptionStore';
+import { Difficulty, QuizNum, QuizType, Topic } from 'src/types/quizTypes';
 
 const CardContainer = styled(motion.div)`
   width: 100%;
@@ -58,15 +62,46 @@ const TagWrapper = styled.div`
   gap: 16px;
 `;
 
-export default function QuizCard({ imgSrc, title, difficulty, quizType, quizNum }: QuizCardProps) {
+export default function QuizCard({ imgSrc, topic, difficulty, quizType, quizNum }: QuizCardProps) {
+  const { setOptionValues } = useOptionStore();
+  const { resetQuizData } = useQuizStore();
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    const options: {
+      topic: Topic;
+      difficulty: Difficulty;
+      quizType: QuizType;
+      quizNum: QuizNum;
+    } = {
+      topic,
+      difficulty,
+      quizType,
+      quizNum,
+    };
+
+    Object.entries(options).forEach(([key, value]) => {
+      if (value !== undefined) {
+        setOptionValues(key as keyof typeof options, value);
+      }
+    });
+
+    resetQuizData();
+    navigate('/loading');
+  };
+
   return (
-    <CardContainer whileHover={{ scale: [null, 1.05, 1.05] }} transition={{ duration: 0.3 }}>
+    <CardContainer
+      whileHover={{ scale: [null, 1.05, 1.05] }}
+      transition={{ duration: 0.3 }}
+      onClick={handleCardClick}
+    >
       <StepImage>
-        <img src={imgSrc} alt={title} />
+        <img src={imgSrc} alt={topic} />
       </StepImage>
       <CardContent>
         <DifficultyBar difficulty={difficulty} />
-        <CardTitle>{title}</CardTitle>
+        <CardTitle>{topic}</CardTitle>
         <CardBottom>
           <TagWrapper>
             <Tag>{quizType}</Tag>

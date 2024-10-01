@@ -56,7 +56,7 @@ export default function TryItNow() {
       <Title>지금 도전하기</Title>
       <CardList>
         {quizCards.map((props) => (
-          <QuizCard key={props.title} {...props} />
+          <QuizCard key={props.topic} {...props} />
         ))}
       </CardList>
     </TryItContainer>

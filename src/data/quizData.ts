@@ -1,8 +1,8 @@
-import { Difficulty, QuizNum, QuizType } from 'src/types/quizTypes';
+import { Difficulty, QuizNum, QuizType, Topic } from 'src/types/quizTypes';
 
 export interface QuizCardProps {
   imgSrc: string;
-  title: string;
+  topic: Topic;
   difficulty: Difficulty;
   quizType: QuizType;
   quizNum: QuizNum;
@@ -11,21 +11,21 @@ export interface QuizCardProps {
 export const quizCards: QuizCardProps[] = [
   {
     imgSrc: '/assets/images/javascript.png',
-    title: 'JavaScript',
+    topic: 'JavaScript',
     difficulty: '쉬움',
     quizType: '객관식',
     quizNum: 10,
   },
   {
     imgSrc: '/assets/images/library.png',
-    title: '프레임워크 및 라이브러리',
+    topic: '프레임워크 및 라이브러리',
     difficulty: '쉬움',
     quizType: 'OX 퀴즈',
     quizNum: 10,
   },
   {
     imgSrc: '/assets/images/algorithm.png',
-    title: '알고리즘 및 자료구조',
+    topic: '알고리즘 및 자료구조',
     difficulty: '보통',
     quizType: '빈칸 맞추기',
     quizNum: 10,

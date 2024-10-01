@@ -95,7 +95,11 @@ export default function QuizResultItem({
 }: QuizResultProps) {
   const isCorrect =
     quizType === '빈칸 맞추기'
-      ? (answer as string[]).includes(userAnswer as string)
+      ? (answer as string[]).some(
+          (answerItem) =>
+            answerItem.toLowerCase().replace(/[,.!?;:'"()]/g, '') ===
+            ((userAnswer as string) || '').toLowerCase().replace(/[,.!?;:'"()]/g, ''),
+        )
       : answer === userAnswer;
 
   return (

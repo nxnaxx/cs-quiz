@@ -81,7 +81,7 @@ export const CorrectFillBlank: Story = {
     questionNum: 1,
     question: '다음 중 JavaScript 함수 외부에서 정의된 변수를 참조하는 개념은 _____이다.',
     answer: ['클로저', 'closure'],
-    userAnswer: '클로저',
+    userAnswer: 'closure',
     commentary:
       '클로저는 JavaScript 함수 외부에서 정의된 변수들에 대한 참조를 유지하는 개념으로, 함수가 변수를 기억하여 사용하는 메커니즘을 가리킨다.',
   },
@@ -99,6 +99,23 @@ export const IncorrectFillBlank: Story = {
     question: '다음 중 JavaScript 함수 외부에서 정의된 변수를 참조하는 개념은 _____이다.',
     answer: ['클로저', 'closure'],
     userAnswer: '호이스팅',
+    commentary:
+      '클로저는 JavaScript 함수 외부에서 정의된 변수들에 대한 참조를 유지하는 개념으로, 함수가 변수를 기억하여 사용하는 메커니즘을 가리킨다.',
+  },
+  render: (args) => (
+    <div style={{ width: '640px' }}>
+      <QuizResultItem {...args} />
+    </div>
+  ),
+};
+
+export const NullFillBlank: Story = {
+  args: {
+    quizType: '빈칸 맞추기',
+    questionNum: 1,
+    question: '다음 중 JavaScript 함수 외부에서 정의된 변수를 참조하는 개념은 _____이다.',
+    answer: ['클로저', 'closure'],
+    userAnswer: null,
     commentary:
       '클로저는 JavaScript 함수 외부에서 정의된 변수들에 대한 참조를 유지하는 개념으로, 함수가 변수를 기억하여 사용하는 메커니즘을 가리킨다.',
   },
