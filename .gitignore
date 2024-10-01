@@ -7,6 +7,9 @@ dist-ssr/
 build/
 *.local
 
+# TypeScript build info files
+*.tsbuildinfo
+
 # Environment variable files
 .env
 .env.local
