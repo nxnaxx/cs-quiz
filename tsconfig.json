@@ -16,7 +16,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
     "paths": {
-      "@assets/*": ["src/assets/*"],
+      "@assets/*": ["public/assets/*"],
       "@atoms/*": ["src/components/atoms/*"],
       "@molecules/*": ["src/components/molecules/*"],
       "@organisms/*": ["src/components/organisms/*"],
@@ -25,7 +25,9 @@
       "@styles/*": ["src/styles/*"],
       "@data/*": ["src/data/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@store/*": ["src/store/*"]
+      "@store/*": ["src/store/*"],
+      "@services/*": ["src/services/*"],
+      "@utils/*": ["src/utils/*"]
     }
   },
   "include": ["src/**/*", ".storybook/**/*", "src/svg.d.ts"],

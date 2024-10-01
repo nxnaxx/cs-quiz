@@ -61,10 +61,11 @@ export default function QuizTemplate({
   onNextClick,
   children,
 }: QuizTemplateProps) {
-  const { quizData, setPrevQuiz, setNextQuiz, errors, setError } = useQuizStore();
+  const { quizData, setPrevQuiz, setNextQuiz, errors, setError, clearErrors } = useQuizStore();
   const navigate = useNavigate();
 
   const handlePrevClick = () => {
+    clearErrors('userAnswer');
     setPrevQuiz();
   };
 

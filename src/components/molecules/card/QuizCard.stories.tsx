@@ -12,7 +12,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Card1: Story = {
   args: {
-    imgSrc: 'src/assets/images/javascript.png',
+    imgSrc: '/assets/images/javascript.png',
     title: 'JavaScript',
     difficulty: '쉬움',
     quizType: '객관식',
@@ -27,7 +27,7 @@ export const Card1: Story = {
 
 export const Card2: Story = {
   args: {
-    imgSrc: 'src/assets/images/library.png',
+    imgSrc: '/assets/images/library.png',
     title: '프레임워크 및 라이브러리',
     difficulty: '보통',
     quizType: 'OX 퀴즈',

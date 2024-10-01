@@ -74,7 +74,7 @@ export default function HeroSection() {
           </FilledButton>
         </HeroContent>
         <HeroImage>
-          <img src="src/assets/images/hero-img.png" alt="hero image" />
+          <img src="/assets/images/hero-img.png" alt="hero image" />
         </HeroImage>
       </HeroWrapper>
     </HeroContainer>

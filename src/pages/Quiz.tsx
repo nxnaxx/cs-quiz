@@ -1,16 +1,14 @@
+import { useLocation } from 'react-router-dom';
 import MainTemplate from '@templates/MainTemplate';
-import { QuizType } from 'src/types/quizTypes';
 import useQuizStore, { FillBlank, Multiple, TrueFalse } from '@store/useQuizStore';
 import MultipleSection from '@organisms/section/MultipleSection';
 import TrueFalseSection from '@organisms/section/TrueFalseSection';
 import FillBlankSection from '@organisms/section/FillBlankSection';
 
-interface QuizPageProps {
-  quizType: QuizType;
-}
-
-export default function Quiz({ quizType }: QuizPageProps) {
+export default function Quiz() {
   const { quizData, currentQuizNum } = useQuizStore();
+  const location = useLocation();
+  const quizType = location.state?.quizType;
 
   return (
     <MainTemplate>

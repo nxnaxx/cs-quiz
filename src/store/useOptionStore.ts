@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { persist, PersistOptions } from 'zustand/middleware';
 import { Difficulty, QuizNum, QuizType, Topic } from 'src/types/quizTypes';
 
 export interface OptionStore {
@@ -13,7 +14,6 @@ export interface OptionStore {
     value: OptionStore['optionValues'][K],
   ) => void;
   resetOptions: () => void;
-  submitData: () => void;
 }
 
 const initialOptionValues: OptionStore['optionValues'] = {
@@ -23,20 +23,24 @@ const initialOptionValues: OptionStore['optionValues'] = {
   quizType: '객관식',
 };
 
-const useOptionStore = create<OptionStore>((set) => ({
-  optionValues: initialOptionValues,
-  setOptionValues: (key, value) =>
-    set((state) => ({
-      optionValues: {
-        ...state.optionValues,
-        [key]: value,
-      },
-    })),
-  resetOptions: () => set({ optionValues: initialOptionValues }),
-  submitData: () => {
-    const { optionValues } = useOptionStore.getState();
-    console.log('submit', optionValues);
-  },
-}));
+const useOptionStore = create<OptionStore>()(
+  persist<OptionStore>(
+    (set) => ({
+      optionValues: initialOptionValues,
+      setOptionValues: (key, value) =>
+        set((state) => ({
+          optionValues: {
+            ...state.optionValues,
+            [key]: value,
+          },
+        })),
+      resetOptions: () => set({ optionValues: initialOptionValues }),
+    }),
+    {
+      name: 'options-store',
+      getStorage: () => sessionStorage,
+    } as PersistOptions<OptionStore>,
+  ),
+);
 
 export default useOptionStore;

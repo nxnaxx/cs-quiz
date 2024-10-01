@@ -12,6 +12,7 @@ import DifficultyBar from '@molecules/bar/DifficultyBar';
 import Select from '@molecules/select/Select';
 import Chip from '@atoms/chip/Chip';
 import FilledButton from '@atoms/button/FilledButton';
+import useQuizStore from '@store/useQuizStore';
 
 interface OptionModalProps {
   topic: Topic;
@@ -106,6 +107,7 @@ const QuizTypeList = styled.div`
 
 const OptionModal = forwardRef<HTMLDivElement, OptionModalProps>(({ topic, onCloseModal }, ref) => {
   const { optionValues, setOptionValues } = useOptionStore();
+  const { resetQuizData } = useQuizStore();
   const navigate = useNavigate();
 
   const handleChipClick = <K extends keyof OptionStore['optionValues']>(
@@ -117,6 +119,7 @@ const OptionModal = forwardRef<HTMLDivElement, OptionModalProps>(({ topic, onClo
 
   const handleSubmitClick = () => {
     if (!Object.values(optionValues).some((value) => value === undefined || value === null)) {
+      resetQuizData();
       navigate('/loading');
     }
   };

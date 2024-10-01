@@ -1,5 +1,10 @@
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { center, cubeSlide, dotsLoad } from '@styles/mixins';
+import useOptionStore from '@store/useOptionStore';
+import useQuizStore from '@store/useQuizStore';
+import fetchQuiz from '@services/openAIService';
 
 const LoadingContainer = styled.div`
   ${center}
@@ -46,25 +51,25 @@ const Box = styled.div`
     right: 50%;
     background: var(--secondary);
   }
-  &:nth-child(1) {
+  &:nth-of-type(1) {
     --sx: 50%;
     --sy: -50%;
     --ex: 150%;
     --ey: 50%;
   }
-  &:nth-child(2) {
+  &:nth-of-type(2) {
     --sx: -50%;
     --sy: -50%;
     --ex: 50%;
     --ey: -50%;
   }
-  &:nth-child(3) {
+  &:nth-of-type(3) {
     --sx: 150%;
     --sy: 50%;
     --ex: 50%;
     --ey: 50%;
   }
-  &:nth-child(4) {
+  &:nth-of-type(4) {
     --sx: 50%;
     --sy: 50%;
     --ex: -50%;
@@ -92,6 +97,30 @@ const Dots = styled.span`
 `;
 
 export default function Loading() {
+  const navigate = useNavigate();
+  const { optionValues } = useOptionStore();
+  const { setQuizData } = useQuizStore();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const quiz = await fetchQuiz(optionValues);
+
+        optionValues.quizType === '객관식'
+          ? setQuizData(quiz['Multiple'])
+          : optionValues.quizType === 'OX 퀴즈'
+            ? setQuizData(quiz['TrueFalse'])
+            : setQuizData(quiz['FillBlank']);
+
+        navigate('/quiz', { state: { quizType: optionValues.quizType } });
+      } catch (error) {
+        console.error('API 호출 중 오류 발생:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <LoadingContainer>
       <Isometric>

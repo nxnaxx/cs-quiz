@@ -16,7 +16,7 @@ const MainLogoLink = styled(NavLink)``;
 const MainLogo = styled.h1`
   width: 200px;
   height: 40px;
-  background-image: url('src/assets/images/logo.svg');
+  background-image: url('/assets/images/logo.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
