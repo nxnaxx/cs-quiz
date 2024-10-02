@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import styled from '@emotion/styled';
+import { mobile } from '@styles/responsive';
 import { center } from '@styles/mixins';
 import { Chart, ArcElement, Tooltip, Legend, DoughnutController } from 'chart.js';
 
@@ -14,6 +15,11 @@ const ProgressContainer = styled.div`
   position: relative;
   width: 120px;
   height: 120px;
+
+  @media (max-width: ${mobile}) {
+    width: 96px;
+    height: 96px;
+  }
 `;
 
 const ProgressBar = styled.canvas`

@@ -1,9 +1,10 @@
 import { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
+import { mobile } from '@styles/responsive';
 import { center } from '@styles/mixins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
+import { faCircleCheck, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import AngleArrowSVG from '@assets/icons/angle-arrow.svg?react';
 import useQuizStore from '@store/useQuizStore';
 import useOptionStore from '@store/useOptionStore';
@@ -13,11 +14,19 @@ import QuizResultItem from '@molecules/item/QuizResultItem';
 import FilledButton from '@atoms/button/FilledButton';
 
 const ResultContainer = styled.div`
-  width: 800px;
+  width: 720px;
+  margin: auto;
   padding: 40px;
   border-radius: 24px;
   background-color: var(--white);
   box-shadow: var(--shadow1);
+
+  @media (max-width: ${mobile}) {
+    width: calc(100% - 24px * 2);
+    margin: 0 24px 64px 24px;
+    padding: 20px 20px 32px 20px;
+    border-radius: 16px;
+  }
 `;
 
 const ResultTop = styled.div`
@@ -25,6 +34,13 @@ const ResultTop = styled.div`
   align-items: center;
   gap: 16px;
   margin-bottom: 40px;
+
+  @media (max-width: ${mobile}) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
 `;
 
 const TopicWrapper = styled.div`
@@ -51,6 +67,10 @@ const DifficultyWrapper = styled.div`
 const QuizScoreWrapper = styled.div`
   display: flex;
   margin-bottom: 48px;
+
+  @media (max-width: ${mobile}) {
+    margin-bottom: 32px;
+  }
 `;
 
 const Score = styled.div`
@@ -63,11 +83,19 @@ const Score = styled.div`
 const CheckIcon = styled(FontAwesomeIcon)`
   color: var(--green);
   font-size: 40px;
+
+  @media (max-width: ${mobile}) {
+    font-size: 32px;
+  }
 `;
 
 const XMarkIcon = styled(FontAwesomeIcon)`
   color: var(--red);
   font-size: 40px;
+
+  @media (max-width: ${mobile}) {
+    font-size: 32px;
+  }
 `;
 
 const ScoreNum = styled.p`
@@ -84,6 +112,10 @@ const ResultList = styled.ul`
   flex-direction: column;
   gap: 24px;
   margin-bottom: 48px;
+
+  @media (max-width: ${mobile}) {
+    margin-bottom: 32px;
+  }
 `;
 
 const ButtonWrapper = styled.div`
@@ -137,7 +169,7 @@ export default function QuizResultSection() {
           <ScoreLabel>맞은 문제</ScoreLabel>
         </Score>
         <Score>
-          <XMarkIcon icon={faCircleCheck} />
+          <XMarkIcon icon={faCircleXmark} />
           <ScoreNum>{quizData ? quizData.length - correctQuizNum : 0}</ScoreNum>
           <ScoreLabel>틀린 문제</ScoreLabel>
         </Score>
