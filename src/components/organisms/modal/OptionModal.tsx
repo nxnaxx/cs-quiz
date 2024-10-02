@@ -1,7 +1,8 @@
 import { forwardRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
-import { center } from '@styles/mixins';
+import { mobile } from '@styles/responsive';
+import { center, slideUp } from '@styles/mixins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import AngleArrowSVG from '@assets/icons/angle-arrow.svg?react';
@@ -36,6 +37,15 @@ const ModalContainer = styled.div`
   border-radius: 16px;
   background-color: var(--white);
   box-shadow: var(--shadow1);
+
+  @media (max-width: ${mobile}) {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 24px 24px 24px;
+    border-radius: 16px 16px 0px 0px;
+    animation: ${slideUp} 0.2s forwards;
+  }
 `;
 
 const ModalTop = styled.div`
