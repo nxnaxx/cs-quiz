@@ -7,7 +7,7 @@ const TagContainer = styled.div<TagProps>`
   display: inline-flex;
   min-width: ${(props) => (props.size === 'medium' ? '64px' : '56px')};
   min-height: ${(props) => (props.size === 'medium' ? '36px' : '32px')};
-  padding: 4px 12px;
+  padding: ${(props) => (props.size === 'medium' ? '4px 12px' : '4px 10px')};
   border: 2px solid
     ${(props) => (props.variant === 'primary' ? 'var(--primary-lighter)' : 'var(--secondary-dark)')};
   border-radius: 6px;

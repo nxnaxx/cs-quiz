@@ -28,14 +28,12 @@ const MainContent = styled.div`
 
 export default function MainTemplate({ children }: MainTemplateProps) {
   return (
-    <>
-      <MainTemplateContainer>
-        <Header />
-        <MainContentWrapper>
-          <MainContent>{children}</MainContent>
-        </MainContentWrapper>
-        <Footer />
-      </MainTemplateContainer>
-    </>
+    <MainTemplateContainer>
+      <Header />
+      <MainContentWrapper>
+        <MainContent>{children}</MainContent>
+      </MainContentWrapper>
+      <Footer />
+    </MainTemplateContainer>
   );
 }

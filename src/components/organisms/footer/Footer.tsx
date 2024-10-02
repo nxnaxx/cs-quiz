@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { mobile } from '@styles/responsive';
 
 const FooterContainer = styled.footer`
   display: flex;
@@ -10,6 +11,12 @@ const FooterContainer = styled.footer`
   border-top: 1px solid var(--dark-50);
   background-color: var(--white);
   color: var(--dark-500);
+
+  @media (max-width: ${mobile}) {
+    min-height: auto;
+    padding: 16px 24px;
+    font-size: var(--fs-s);
+  }
 `;
 
 export default function Footer() {

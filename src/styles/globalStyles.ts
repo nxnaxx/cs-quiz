@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { mobile, tabletL } from './responsive';
 
 export const globalStyles = css`
   @font-face {
@@ -109,11 +110,19 @@ export const globalStyles = css`
   h2 {
     font-size: var(--fs-3xl);
     font-weight: var(--fw-sb);
+
+    @media (max-width: ${tabletL}) {
+      font-size: var(--fs-2xl);
+    }
   }
 
   h3 {
     font-size: var(--fs-2xl);
     font-weight: var(--fw-sb);
+
+    @media (max-width: ${tabletL}) {
+      font-size: var(--fs-xl);
+    }
   }
 
   a {

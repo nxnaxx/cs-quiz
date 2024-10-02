@@ -1,4 +1,5 @@
 import { css, keyframes } from '@emotion/react';
+import { tabletL } from './responsive';
 
 export const center = css`
   display: flex;
@@ -9,6 +10,10 @@ export const center = css`
 export const inner = css`
   max-width: 1200px;
   margin: 0 auto;
+
+  @media (max-width: ${tabletL}) {
+    max-width: 1120px;
+  }
 `;
 
 export const cubeSlide = keyframes`
