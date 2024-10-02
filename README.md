@@ -13,11 +13,6 @@
 
 </br>
 
-| ![Main Page](./docs/images/main-page.png) |
-| ----------------------------------------- |
-
-</br>
-
 ## 목차
 
 - [배포 링크](#배포-링크)
@@ -37,6 +32,16 @@ https://cs-quiz-xi.vercel.app/
 
 ## 구현 사항
 
+### 메인 페이지
+
+| ![Main Page](./docs/images/main-page.png) |
+| ----------------------------------------- |
+
+- 시작하기 버튼 클릭 시 주제 선택 페이지 이동
+- 지금 도전하기 card 클릭 시 지정된 옵션을 토대로 퀴즈 생성
+
+</br>
+
 ### 주제 선택 페이지
 
 | ![Topic Page](./docs/images/topics-page.png)    |
@@ -44,9 +49,7 @@ https://cs-quiz-xi.vercel.app/
 | ![Modal](./docs/images/option-modal.png)        |
 | ![Active Modal](./docs/images/active-modal.png) |
 
-- 디자인 수정 (brand color, thumbnail image, 메인 페이지 etc.)
-- 메인 페이지 구현, 주제 선택 페이지 구현
-- 시작하기 버튼 클릭 시 주제 선택 페이지 이동
+
 - 주제 선택 시 옵션(난이도, 문제 수, 문제 유형) 선택 modal 표시
   - modal 오픈 시 외부 스크롤 방지
   - modal 외부 클릭 또는 close button 클릭 시 modal 닫기
@@ -91,17 +94,6 @@ https://cs-quiz-xi.vercel.app/
 - 퀴즈 점수 표시
 - 정답인 경우, 정답과 추가 설명 표시
 - 오답인 경우, 유저가 선택(작성)한 오답과 정답, 추가 설명 표시
-  - OX 퀴즈 문제 또는 빈칸 채우기 문제에서 답변을 입력하지 않았을 경우에는 정답과 추가 설명만 표시
-
-</br>
-
-## 해결 과제
-
-- ~~메인 페이지 quiz card 선택 시 기본 설정된 option으로 퀴즈 생성~~
-- ~~퀴즈 생성 페이지~~
-- ~~퀴즈 결과 페이지~~
-- ~~실제 데이터 연결~~
-- 반응형 구현
 
 </br>
 
