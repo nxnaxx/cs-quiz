@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
+import { mobile } from '@styles/responsive';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 import useQuizStore from '@store/useQuizStore';
@@ -17,14 +18,25 @@ export interface QuizTemplateProps {
 
 const QuizContainer = styled.section`
   width: 720px;
+  margin: auto;
   padding: 40px;
   border-radius: 24px;
   background-color: var(--white);
   box-shadow: var(--shadow1);
+
+  @media (max-width: ${mobile}) {
+    width: 100%;
+    padding: 24px 24px 40px 24px;
+    border-radius: 0;
+  }
 `;
 
 const QuizTop = styled.div`
   margin-bottom: 40px;
+
+  @media (max-width: ${mobile}) {
+    margin-bottom: 24px;
+  }
 `;
 
 const QuestionNum = styled.p`
@@ -32,11 +44,19 @@ const QuestionNum = styled.p`
   color: var(--primary);
   font-size: var(--fs-2xl);
   font-weight: var(--fw-sb);
+
+  @media (max-width: ${mobile}) {
+    font-size: var(--fs-xl);
+  }
 `;
 
 const Question = styled.p`
   font-size: var(--fs-xl);
   font-weight: var(--fw-m);
+
+  @media (max-width: ${mobile}) {
+    font-size: var(--fs-l);
+  }
 `;
 
 const ValidationMessage = styled.div`

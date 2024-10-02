@@ -1,11 +1,22 @@
 import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
+import { mobile, tabletL, tabletS } from '@styles/responsive';
 import { inner } from '@styles/mixins';
 import FilledButton from '@atoms/button/FilledButton';
+import TryItNow from './TryItNow';
 
 const HeroContainer = styled.section`
+  position: relative;
   width: 100%;
   background-color: var(--background);
+
+  @media (max-width: ${tabletS}) {
+    padding-bottom: 120px;
+  }
+
+  @media (max-width: ${mobile}) {
+    padding-bottom: 80px;
+  }
 `;
 
 const HeroWrapper = styled.div`
@@ -14,10 +25,34 @@ const HeroWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 120px 40px 520px 40px;
+
+  @media (max-width: ${tabletL}) {
+    gap: 40px;
+    padding: 104px 96px 480px 96px;
+  }
+
+  @media (max-width: ${tabletS}) {
+    flex-direction: column;
+    padding-bottom: 80px;
+  }
+
+  @media (max-width: ${mobile}) {
+    gap: 24px;
+    padding: 48px 24px 40px 24px;
+  }
 `;
 
 const HeroContent = styled.div`
   flex: 3;
+
+  @media (max-width: ${tabletL}) {
+    flex: 0.5;
+  }
+
+  @media (max-width: ${tabletS}) {
+    order: 1;
+    margin-bottom: 40px;
+  }
 `;
 
 const HeroTitle = styled.p`
@@ -27,6 +62,20 @@ const HeroTitle = styled.p`
   font-weight: var(--fw-eb);
   line-height: 1.4;
   text-wrap: balance;
+
+  @media (max-width: ${tabletL}) {
+    margin-bottom: 24px;
+    font-size: 3rem;
+  }
+
+  @media (max-width: ${tabletS}) {
+    width: 89%;
+    text-wrap: wrap;
+  }
+
+  @media (max-width: ${mobile}) {
+    font-size: 2.2rem;
+  }
 `;
 
 const TitleStrong = styled.span`
@@ -38,6 +87,16 @@ const HeroDescription = styled.p`
   color: var(--dark-300);
   font-size: var(--fs-xl);
   text-wrap: balance;
+
+  @media (max-width: ${tabletL}) {
+    margin-bottom: 32px;
+    font-size: var(--fs-l);
+    text-wrap: pretty;
+  }
+
+  @media (max-width: ${mobile}) {
+    text-wrap: wrap;
+  }
 `;
 
 const HeroImage = styled.div`
@@ -46,6 +105,15 @@ const HeroImage = styled.div`
   img {
     max-width: 100%;
     height: auto;
+  }
+
+  @media (max-width: ${tabletL}) {
+    flex: 2.5;
+    max-width: 328px;
+  }
+
+  @media (max-width: ${mobile}) {
+    max-width: 75%;
   }
 `;
 
@@ -77,6 +145,7 @@ export default function HeroSection() {
           <img src="/assets/images/hero-img.png" alt="hero image" />
         </HeroImage>
       </HeroWrapper>
+      <TryItNow />
     </HeroContainer>
   );
 }

@@ -11,6 +11,7 @@ interface MultipleOptionProps extends ActiveOptionProps {
 }
 
 const CheckMark = styled.div`
+  flex-shrink: 0;
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -20,6 +21,7 @@ const OptionContainer = styled(motion.li)<ActiveOptionProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
   width: 100%;
   padding: 16px 24px;
   border: 1px solid var(--dark-50);

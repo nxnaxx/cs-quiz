@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
+import { mobile, tabletL, tabletS } from '@styles/responsive';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -19,6 +20,19 @@ const CardContainer = styled(motion.div)`
   border-radius: 16px;
   background-color: var(--white);
   cursor: pointer;
+
+  @media (max-width: ${tabletL}) {
+    padding: 20px;
+  }
+
+  @media (max-width: ${tabletS}) {
+    display: flex;
+    gap: 24px;
+  }
+
+  @media (max-width: ${mobile}) {
+    display: block;
+  }
 `;
 
 const StepImage = styled.div`
@@ -38,28 +52,61 @@ const StepImage = styled.div`
     height: 100%;
     object-fit: cover;
   }
+
+  @media (max-width: ${tabletS}) {
+    flex: 1;
+    margin-bottom: 0;
+    padding-top: 33.33%;
+  }
+
+  @media (max-width: ${mobile}) {
+    margin-bottom: 24px;
+    padding-top: 66.67%;
+  }
 `;
 
 const CardContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
+
+  @media (max-width: ${tabletS}) {
+    flex: 1.2;
+    gap: 16px;
+    padding: 16px 4px 8px 0;
+  }
+
+  @media (max-width: ${mobile}) {
+    padding: 0;
+  }
 `;
 
 const CardTitle = styled.p`
   font-size: var(--fs-xl);
   font-weight: var(--fw-sb);
+
+  @media (max-width: ${tabletL}) {
+    gap: 12px;
+  }
 `;
 
 const CardBottom = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: ${tabletS}) {
+    margin-top: auto;
+  }
 `;
 
 const TagWrapper = styled.div`
   display: flex;
   gap: 16px;
+
+  @media (max-width: ${tabletL}) {
+    gap: 12px;
+  }
 `;
 
 export default function QuizCard({ imgSrc, topic, difficulty, quizType, quizNum }: QuizCardProps) {
@@ -104,8 +151,8 @@ export default function QuizCard({ imgSrc, topic, difficulty, quizType, quizNum 
         <CardTitle>{topic}</CardTitle>
         <CardBottom>
           <TagWrapper>
-            <Tag>{quizType}</Tag>
-            <Tag variant="secondary">{`${quizNum}문제`}</Tag>
+            <Tag size="small">{quizType}</Tag>
+            <Tag size="small" variant="secondary">{`${quizNum}문제`}</Tag>
           </TagWrapper>
           <IconFilledButton>
             <FontAwesomeIcon icon={faArrowRight} />

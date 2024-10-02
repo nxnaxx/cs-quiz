@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { mobile } from '@styles/responsive';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { QuizType } from 'src/types/quizTypes';
@@ -20,6 +21,10 @@ const UserAnswer = styled.p``;
 
 const MarkIcon = styled.div`
   font-size: 32px;
+
+  @media (max-width: ${mobile}) {
+    font-size: 24px;
+  }
 `;
 
 const QuizResultItemContainer = styled.li<ResultStyleProps>`
@@ -39,6 +44,12 @@ const QuizResultItemContainer = styled.li<ResultStyleProps>`
 
   ${MarkIcon} {
     color: ${(props) => (props.isCorrect ? 'var(--green)' : 'var(--red)')};
+  }
+
+  @media (max-width: ${mobile}) {
+    align-items: flex-start;
+    padding: 16px 20px;
+    gap: 12px;
   }
 `;
 
