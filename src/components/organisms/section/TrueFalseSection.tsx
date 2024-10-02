@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { mobile } from '@styles/responsive';
 import { center } from '@styles/mixins';
 import { motion } from 'framer-motion';
 import QuizTemplate, { QuizTemplateProps } from '@templates/QuizTemplate';
@@ -17,6 +18,12 @@ const AnswerWrapper = styled.div`
   gap: 32px;
   height: 336px;
   padding-bottom: 16px;
+
+  @media (max-width: ${mobile}) {
+    gap: 20px;
+    height: 200px;
+    padding: 0;
+  }
 `;
 
 const CircleMark = styled(CircleMarkSVG)``;
@@ -42,6 +49,15 @@ const AnswerButton = styled(motion.button)<AnswerButtonProps>`
     width: 120px;
     height: 120px;
     color: ${(props) => (props.isSelected ? 'var(--primary)' : 'var(--dark-50)')};
+  }
+
+  @media (max-width: ${mobile}) {
+    border-radius: 16px;
+
+    ${CircleMark}, ${CrossMark} {
+      width: 80px;
+      height: 80px;
+    }
   }
 `;
 

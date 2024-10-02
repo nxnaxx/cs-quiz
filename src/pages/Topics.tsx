@@ -14,7 +14,7 @@ const TopicTitle = styled.h2`
   text-align: center;
 
   @media (max-width: ${mobile}) {
-    margin-bottom: 40px;
+    margin: 40px 0;
   }
 `;
 
@@ -35,7 +35,7 @@ const TopicList = styled.div`
   @media (max-width: ${mobile}) {
     grid-template-columns: repeat(1, 1fr);
     gap: 24px;
-    padding: 0 24px;
+    padding: 0 24px 80px 24px;
   }
 `;
 

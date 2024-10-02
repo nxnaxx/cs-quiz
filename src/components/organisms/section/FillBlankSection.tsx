@@ -7,7 +7,7 @@ interface FillBlankSectionProps extends QuizTemplateProps {}
 
 const AnswerInput = styled.textarea`
   width: 100%;
-  min-height: 120px;
+  min-height: 200px;
   padding: 16px;
   border: 1px solid var(--dark-100);
   border-radius: 8px;

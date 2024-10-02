@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { mobile } from '@styles/responsive';
 import useQuizStore from '@store/useQuizStore';
 import MultipleOption from '@molecules/item/MultipleOption';
 
@@ -11,6 +12,10 @@ const MultipleList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 32px;
+
+  @media (max-width: ${mobile}) {
+    gap: 20px;
+  }
 `;
 
 export default function MultipleOptionList({
