@@ -10,7 +10,7 @@ import Tag from '@atoms/tag/Tag';
 import IconFilledButton from '@atoms/button/IconFilledButton';
 import useQuizStore from '@store/useQuizStore';
 import useOptionStore from '@store/useOptionStore';
-import { Difficulty, QuizNum, QuizType, Topic } from 'src/types/quizTypes';
+import { QuizOptions } from 'src/types/quizTypes';
 
 const CardContainer = styled(motion.div)`
   width: 100%;
@@ -115,12 +115,7 @@ export default function QuizCard({ imgSrc, topic, difficulty, quizType, quizNum 
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    const options: {
-      topic: Topic;
-      difficulty: Difficulty;
-      quizType: QuizType;
-      quizNum: QuizNum;
-    } = {
+    const options: QuizOptions = {
       topic,
       difficulty,
       quizType,

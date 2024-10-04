@@ -163,7 +163,7 @@ const OptionModal = forwardRef<HTMLDivElement, OptionModalProps>(({ topic, onClo
                 <Chip
                   key={type}
                   size="small"
-                  isActive={optionValues['quizType'] === type}
+                  isActive={optionValues.quizType === type}
                   onChipClick={() => handleChipClick('quizType', type as QuizType)}
                 >
                   {type}

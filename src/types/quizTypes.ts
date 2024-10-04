@@ -17,17 +17,20 @@ export interface BaseQuiz {
 }
 
 export interface Multiple extends BaseQuiz {
+  type: '객관식';
   options: string[];
   answer: string;
   userAnswer: string | null;
 }
 
 export interface TrueFalse extends BaseQuiz {
+  type: 'OX 퀴즈';
   answer: boolean;
   userAnswer: boolean | null;
 }
 
 export interface FillBlank extends BaseQuiz {
+  type: '빈칸 맞추기';
   answer: string[];
   userAnswer: string | null;
 }

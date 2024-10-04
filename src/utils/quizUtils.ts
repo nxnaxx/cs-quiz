@@ -1,4 +1,4 @@
-import { Difficulty, QuizNum, QuizType, Topic } from 'src/types/quizTypes';
+import { Difficulty, QuizNum, QuizType } from 'src/types/quizTypes';
 
 export const createQuizPrompt = (
   topic: string,
@@ -55,6 +55,7 @@ export const quizTypeInterface = (quizType: QuizType) => {
     promptInterface = `
       interface Quiz {
         Multiple: {
+          type: '객관식';
           question: string;
           options: string[];
           answer: string;
@@ -67,6 +68,7 @@ export const quizTypeInterface = (quizType: QuizType) => {
     promptInterface = `
       interface Quiz {
         TrueFalse: {
+          type: 'OX 퀴즈';
           question: string;
           answer: boolean;
           userAnswer: boolean | null;
@@ -78,6 +80,7 @@ export const quizTypeInterface = (quizType: QuizType) => {
     promptInterface = `
       interface Quiz {
         FillBlank: {
+          type: '빈칸 맞추기';
           question: string;
           answer: string[];
           userAnswer: string | null;

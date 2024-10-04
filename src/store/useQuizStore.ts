@@ -1,6 +1,6 @@
 import { Quiz } from 'src/types/quizTypes';
 import { create } from 'zustand';
-import { createJSONStorage, persist, PersistOptions } from 'zustand/middleware';
+import { createJSONStorage, persist } from 'zustand/middleware';
 
 export interface QuizStore {
   quizData: Quiz[] | null;
