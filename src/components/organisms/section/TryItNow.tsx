@@ -88,7 +88,7 @@ const CardList = styled.div`
   gap: 32px;
 
   @media (max-width: ${tabletL}) {
-    gap: 24px;
+    gap: 20px;
   }
 
   @media (max-width: ${tabletS}) {

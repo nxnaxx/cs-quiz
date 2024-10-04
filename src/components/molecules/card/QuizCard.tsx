@@ -22,7 +22,7 @@ const CardContainer = styled(motion.div)`
   cursor: pointer;
 
   @media (max-width: ${tabletL}) {
-    padding: 20px;
+    padding: 16px;
   }
 
   @media (max-width: ${tabletS}) {
