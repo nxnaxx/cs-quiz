@@ -102,9 +102,12 @@ export default function Loading() {
   const { setQuizData } = useQuizStore();
 
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     const fetchData = async () => {
       try {
-        const quiz = await fetchQuiz(optionValues);
+        const quiz = await fetchQuiz(optionValues, signal);
 
         optionValues.quizType === '객관식'
           ? setQuizData(quiz['Multiple'])
@@ -119,6 +122,10 @@ export default function Loading() {
     };
 
     fetchData();
+
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   return (
