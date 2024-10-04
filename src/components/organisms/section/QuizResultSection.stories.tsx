@@ -22,14 +22,14 @@ type Story = StoryObj<typeof meta>;
 
 export const MultipleResult: Story = {
   render: () => {
-    const { setOptionValues } = useOptionStore();
+    const { setOptionValue } = useOptionStore();
     const { setQuizData } = useQuizStore();
 
     useEffect(() => {
       setQuizData(sampleMultipleResult);
-      setOptionValues('topic', 'JavaScript');
-      setOptionValues('difficulty', '쉬움');
-      setOptionValues('quizType', '객관식');
+      setOptionValue('topic', 'JavaScript');
+      setOptionValue('difficulty', '쉬움');
+      setOptionValue('quizType', '객관식');
     }, []);
 
     return (
@@ -45,14 +45,14 @@ export const MultipleResult: Story = {
 
 export const TrueFalseResult: Story = {
   render: () => {
-    const { setOptionValues } = useOptionStore();
+    const { setOptionValue } = useOptionStore();
     const { setQuizData } = useQuizStore();
 
     useEffect(() => {
       setQuizData(sampleMultipleResult);
-      setOptionValues('topic', 'JavaScript');
-      setOptionValues('difficulty', '보통');
-      setOptionValues('quizType', 'OX 퀴즈');
+      setOptionValue('topic', 'JavaScript');
+      setOptionValue('difficulty', '보통');
+      setOptionValue('quizType', 'OX 퀴즈');
     }, []);
 
     return (
@@ -68,14 +68,14 @@ export const TrueFalseResult: Story = {
 
 export const FillBlankResult: Story = {
   render: () => {
-    const { setOptionValues } = useOptionStore();
+    const { setOptionValue } = useOptionStore();
     const { setQuizData } = useQuizStore();
 
     useEffect(() => {
       setQuizData(sampleFillBlankResult);
-      setOptionValues('topic', 'JavaScript');
-      setOptionValues('difficulty', '어려움');
-      setOptionValues('quizType', '빈칸 맞추기');
+      setOptionValue('topic', 'JavaScript');
+      setOptionValue('difficulty', '어려움');
+      setOptionValue('quizType', '빈칸 맞추기');
     }, []);
 
     return (

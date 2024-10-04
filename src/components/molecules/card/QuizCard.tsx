@@ -110,7 +110,7 @@ const TagWrapper = styled.div`
 `;
 
 export default function QuizCard({ imgSrc, topic, difficulty, quizType, quizNum }: QuizCardProps) {
-  const { setOptionValues } = useOptionStore();
+  const { setOptionValue } = useOptionStore();
   const { resetQuizData } = useQuizStore();
   const navigate = useNavigate();
 
@@ -129,7 +129,7 @@ export default function QuizCard({ imgSrc, topic, difficulty, quizType, quizNum 
 
     Object.entries(options).forEach(([key, value]) => {
       if (value !== undefined) {
-        setOptionValues(key as keyof typeof options, value);
+        setOptionValue(key as keyof typeof options, value);
       }
     });
 

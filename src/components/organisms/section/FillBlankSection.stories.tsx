@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import useQuizStore, { FillBlank } from '@store/useQuizStore';
+import useQuizStore from '@store/useQuizStore';
 import { sampleFillBlankData } from '@data/dummyData';
 import FillBlankSection from './FillBlankSection';
+import { FillBlank } from 'src/types/quizTypes';
 
 const meta: Meta<typeof FillBlankSection> = {
   title: 'organisms/FillBlankSection',

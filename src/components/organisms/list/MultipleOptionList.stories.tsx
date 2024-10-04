@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import MultipleOptionList from './MultipleOptionList';
-import useQuizStore, { Multiple } from '@store/useQuizStore';
+import useQuizStore from '@store/useQuizStore';
+import { Multiple } from 'src/types/quizTypes';
 
 const meta: Meta<typeof MultipleOptionList> = {
   title: 'organisms/MultipleOptionList',

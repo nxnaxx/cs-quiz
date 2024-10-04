@@ -1,33 +1,28 @@
 import { create } from 'zustand';
-import { persist, PersistOptions } from 'zustand/middleware';
-import { Difficulty, QuizNum, QuizType, Topic } from 'src/types/quizTypes';
+import { createJSONStorage, persist } from 'zustand/middleware';
+import { QuizOptions } from 'src/types/quizTypes';
 
 export interface OptionStore {
-  optionValues: {
-    topic: Topic | undefined;
-    difficulty: Difficulty;
-    quizNum: QuizNum;
-    quizType: QuizType;
-  };
-  setOptionValues: <K extends keyof OptionStore['optionValues']>(
+  optionValues: QuizOptions;
+  setOptionValue: <K extends keyof QuizOptions>(
     key: K,
     value: OptionStore['optionValues'][K],
   ) => void;
   resetOptions: () => void;
 }
 
-const initialOptionValues: OptionStore['optionValues'] = {
-  topic: undefined,
+const initialOptionValues: QuizOptions = {
+  topic: 'JavaScript',
   difficulty: '쉬움',
   quizNum: 10,
   quizType: '객관식',
 };
 
 const useOptionStore = create<OptionStore>()(
-  persist<OptionStore>(
+  persist(
     (set) => ({
       optionValues: initialOptionValues,
-      setOptionValues: (key, value) =>
+      setOptionValue: (key, value) =>
         set((state) => ({
           optionValues: {
             ...state.optionValues,
@@ -38,8 +33,8 @@ const useOptionStore = create<OptionStore>()(
     }),
     {
       name: 'options-store',
-      getStorage: () => sessionStorage,
-    } as PersistOptions<OptionStore>,
+      storage: createJSONStorage(() => sessionStorage),
+    },
   ),
 );
 

@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import useQuizStore, { TrueFalse } from '@store/useQuizStore';
+import useQuizStore from '@store/useQuizStore';
 import { sampleTrueFalseData } from '@data/dummyData';
 import TrueFalseSection from './TrueFalseSection';
+import { TrueFalse } from 'src/types/quizTypes';
 
 const meta: Meta<typeof TrueFalseSection> = {
   title: 'organisms/TrueFalseSection',

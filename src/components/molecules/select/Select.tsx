@@ -4,11 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import useToggleVisibility from '@hooks/useToggleVisibility';
 import useOptionStore, { OptionStore } from '@store/useOptionStore';
+import { QuizOptions } from 'src/types/quizTypes';
 
-interface SelectProps<K extends keyof OptionStore['optionValues']> {
+interface SelectProps<K extends keyof QuizOptions> {
   isFullWidth?: boolean;
   selectId: K;
-  options: OptionStore['optionValues'][K][];
+  options: QuizOptions[K][];
 }
 
 const SelectContainer = styled(motion.nav)`
@@ -73,10 +74,10 @@ export default function Select<K extends keyof OptionStore['optionValues']>({
 }: SelectProps<K>) {
   const { isVisible, setIsVisible, useVisibilityRef, handleToggleVisibility } =
     useToggleVisibility(false);
-  const { optionValues, setOptionValues } = useOptionStore();
+  const { optionValues, setOptionValue } = useOptionStore();
 
   const handleOptionClick = (value: OptionStore['optionValues'][K]) => {
-    setOptionValues(selectId, value);
+    setOptionValue(selectId, value);
     setIsVisible(false);
   };
 

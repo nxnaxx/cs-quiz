@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import useQuizStore, { Multiple } from '@store/useQuizStore';
+import useQuizStore from '@store/useQuizStore';
 import MultipleSection from './MultipleSection';
 import { sampleMultipleData } from '@data/dummyData';
+import { Multiple } from 'src/types/quizTypes';
 
 const meta: Meta<typeof MultipleSection> = {
   title: 'organisms/MultipleSection',
