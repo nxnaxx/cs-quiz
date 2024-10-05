@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import useQuizStore from '@store/useQuizStore';
 import MultipleSection from './MultipleSection';
-import { sampleMultipleData } from '@data/dummyData';
+import { sampleMultipleData } from 'src/__mocks__/quizMockData';
 import { Multiple } from 'src/types/quizTypes';
 
 const meta: Meta<typeof MultipleSection> = {
@@ -28,7 +28,7 @@ export const Muliple: Story = {
           <MultipleSection
             currentQuizNum={currentQuizNum}
             totalQuizNum={quizData.length}
-            question={(quizData[currentQuizNum - 1] as Multiple).question}
+            question={quizData[currentQuizNum - 1].question}
             options={(quizData[currentQuizNum - 1] as Multiple).options}
           />
         )}

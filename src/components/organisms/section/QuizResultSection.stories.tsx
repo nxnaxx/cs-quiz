@@ -4,10 +4,10 @@ import { Meta, StoryObj } from '@storybook/react';
 import useOptionStore from '@store/useOptionStore';
 import useQuizStore from '@store/useQuizStore';
 import {
+  sampleFillBlankResult,
   sampleMultipleResult,
   sampleTrueFalseResult,
-  sampleFillBlankResult,
-} from '@data/dummyData';
+} from 'src/__mocks__/quizMockData';
 import QuizResultSection from './QuizResultSection';
 import Home from '@pages/Home';
 
@@ -49,7 +49,7 @@ export const TrueFalseResult: Story = {
     const { setQuizData } = useQuizStore();
 
     useEffect(() => {
-      setQuizData(sampleMultipleResult);
+      setQuizData(sampleTrueFalseResult);
       setOptionValue('topic', 'JavaScript');
       setOptionValue('difficulty', '보통');
       setOptionValue('quizType', 'OX 퀴즈');
