@@ -1,11 +1,7 @@
-import { Difficulty, QuizNum, QuizType, Topic } from 'src/types/quizTypes';
+import { Difficulty, QuizNum, QuizOptions, QuizType } from 'src/types/quizTypes';
 
-export interface QuizCardProps {
+export interface QuizCardProps extends QuizOptions {
   imgSrc: string;
-  topic: Topic;
-  difficulty: Difficulty;
-  quizType: QuizType;
-  quizNum: QuizNum;
 }
 
 export const quizCards: QuizCardProps[] = [

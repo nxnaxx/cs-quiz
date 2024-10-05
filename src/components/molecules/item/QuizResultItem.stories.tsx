@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react';
-import MultipleOption from './MultipleOption';
 import QuizResultItem from './QuizResultItem';
 
 const meta: Meta<typeof QuizResultItem> = {

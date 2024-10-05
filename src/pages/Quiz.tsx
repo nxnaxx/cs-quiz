@@ -1,9 +1,10 @@
 import { useLocation } from 'react-router-dom';
 import MainTemplate from '@templates/MainTemplate';
-import useQuizStore, { FillBlank, Multiple, TrueFalse } from '@store/useQuizStore';
+import useQuizStore from '@store/useQuizStore';
 import MultipleSection from '@organisms/section/MultipleSection';
 import TrueFalseSection from '@organisms/section/TrueFalseSection';
 import FillBlankSection from '@organisms/section/FillBlankSection';
+import { FillBlank, Multiple, TrueFalse } from 'src/types/quizTypes';
 
 export default function Quiz() {
   const { quizData, currentQuizNum } = useQuizStore();

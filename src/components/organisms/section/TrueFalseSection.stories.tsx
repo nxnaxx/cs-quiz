@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import useQuizStore, { TrueFalse } from '@store/useQuizStore';
-import { sampleTrueFalseData } from '@data/dummyData';
+import useQuizStore from '@store/useQuizStore';
+import { sampleTrueFalseData } from 'src/__mocks__/quizMockData';
 import TrueFalseSection from './TrueFalseSection';
 
 const meta: Meta<typeof TrueFalseSection> = {
@@ -27,7 +27,7 @@ export const TrueOrFalse: Story = {
           <TrueFalseSection
             currentQuizNum={currentQuizNum}
             totalQuizNum={quizData.length}
-            question={(quizData[currentQuizNum - 1] as TrueFalse).question}
+            question={quizData[currentQuizNum - 1].question}
           />
         )}
       </>

@@ -1,10 +1,6 @@
 import styled from '@emotion/styled';
 import { center } from '@styles/mixins';
-import { ChipStyleProps } from 'src/types/elementTypes';
-
-interface ChipProps extends ChipStyleProps {
-  onChipClick?: () => void;
-}
+import { ChipProps, ChipStyleProps } from 'src/types/elementTypes';
 
 const ChipContainer = styled.div<ChipStyleProps>`
   ${center}

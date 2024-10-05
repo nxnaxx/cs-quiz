@@ -10,3 +10,36 @@ export type Topic =
 export type Difficulty = '쉬움' | '보통' | '어려움';
 export type QuizType = '객관식' | 'OX 퀴즈' | '빈칸 맞추기';
 export type QuizNum = 5 | 10 | 15;
+
+export interface BaseQuiz {
+  question: string;
+  commentary: string;
+}
+
+export interface Multiple extends BaseQuiz {
+  type: '객관식';
+  options: string[];
+  answer: string;
+  userAnswer: string | null;
+}
+
+export interface TrueFalse extends BaseQuiz {
+  type: 'OX 퀴즈';
+  answer: boolean;
+  userAnswer: boolean | null;
+}
+
+export interface FillBlank extends BaseQuiz {
+  type: '빈칸 맞추기';
+  answer: string[];
+  userAnswer: string | null;
+}
+
+export type Quiz = Multiple | TrueFalse | FillBlank;
+
+export interface QuizOptions {
+  topic: Topic;
+  difficulty: Difficulty;
+  quizType: QuizType;
+  quizNum: QuizNum;
+}

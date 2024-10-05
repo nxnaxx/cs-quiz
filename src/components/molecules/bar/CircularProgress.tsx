@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import styled from '@emotion/styled';
 import { mobile } from '@styles/responsive';
 import { center } from '@styles/mixins';
@@ -35,39 +35,80 @@ const ProgressLabel = styled.h2`
   transform: translate(-50%, -50%);
 `;
 
-export default function CircularProgress({ progress }: CircularProgressProps) {
+const CircularProgress = React.memo(({ progress }: CircularProgressProps) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
+  const chartData = useMemo(
+    () => ({
+      datasets: [
+        {
+          data: [progress, 100 - progress],
+          backgroundColor: ['#6807f9', '#ebeef4'],
+          hoverBackgroundColor: ['#6807f9', '#ebeef4'],
+          borderWidth: 0,
+          borderRadius: [15, 0],
+        },
+      ],
+    }),
+    [progress],
+  );
+
+  const chartOptions = useMemo(
+    () => ({
+      cutout: '80%',
+      responsive: true,
+      plugins: {
+        tooltip: {
+          enabled: false,
+        },
+      },
+    }),
+    [],
+  );
+
+  // useEffect(() => {
+  //   const ctx = canvasRef.current?.getContext('2d');
+  //   if (ctx) {
+  //     const chart = new Chart(ctx, {
+  //       type: 'doughnut',
+  //       data: {
+  //         datasets: [
+  //           {
+  //             data: [progress, 100 - progress],
+  //             backgroundColor: ['#6807f9', '#ebeef4'],
+  //             hoverBackgroundColor: ['#6807f9', '#ebeef4'],
+  //             borderWidth: 0,
+  //             borderRadius: [15, 0],
+  //           },
+  //         ],
+  //       },
+  //       options: {
+  //         cutout: '80%',
+  //         responsive: true,
+  //         plugins: {
+  //           tooltip: {
+  //             enabled: false,
+  //           },
+  //         },
+  //       },
+  //     });
+
+  //     return () => chart.destroy();
+  //   }
+  // }, [progress]);
 
   useEffect(() => {
     const ctx = canvasRef.current?.getContext('2d');
     if (ctx) {
       const chart = new Chart(ctx, {
         type: 'doughnut',
-        data: {
-          datasets: [
-            {
-              data: [progress, 100 - progress],
-              backgroundColor: ['#6807f9', '#ebeef4'],
-              hoverBackgroundColor: ['#6807f9', '#ebeef4'],
-              borderWidth: 0,
-              borderRadius: [15, 0],
-            },
-          ],
-        },
-        options: {
-          cutout: '80%',
-          responsive: true,
-          plugins: {
-            tooltip: {
-              enabled: false,
-            },
-          },
-        },
+        data: chartData,
+        options: chartOptions,
       });
 
       return () => chart.destroy();
     }
-  }, [progress]);
+  }, [chartData, chartOptions]);
 
   return (
     <ProgressContainer>
@@ -75,4 +116,8 @@ export default function CircularProgress({ progress }: CircularProgressProps) {
       <ProgressLabel>{progress}</ProgressLabel>
     </ProgressContainer>
   );
-}
+});
+
+CircularProgress.displayName = 'CircularProgress';
+
+export default CircularProgress;

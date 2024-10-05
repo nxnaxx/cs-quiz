@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import useQuizStore, { FillBlank } from '@store/useQuizStore';
-import { sampleFillBlankData } from '@data/dummyData';
+import useQuizStore from '@store/useQuizStore';
+import { sampleFillBlankData } from 'src/__mocks__/quizMockData';
 import FillBlankSection from './FillBlankSection';
 
 const meta: Meta<typeof FillBlankSection> = {
@@ -27,7 +27,7 @@ export const FillBlankQuiz: Story = {
           <FillBlankSection
             currentQuizNum={currentQuizNum}
             totalQuizNum={quizData.length}
-            question={(quizData[currentQuizNum - 1] as FillBlank).question}
+            question={quizData[currentQuizNum - 1].question}
           />
         )}
       </>

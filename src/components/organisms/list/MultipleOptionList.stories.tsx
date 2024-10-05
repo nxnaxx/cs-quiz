@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import MultipleOptionList from './MultipleOptionList';
-import useQuizStore, { Multiple } from '@store/useQuizStore';
+import useQuizStore from '@store/useQuizStore';
+import { Multiple } from 'src/types/quizTypes';
 
 const meta: Meta<typeof MultipleOptionList> = {
   title: 'organisms/MultipleOptionList',
@@ -14,6 +15,7 @@ type Story = StoryObj<typeof meta>;
 
 const sampleData: Multiple[] = [
   {
+    type: '객관식',
     question: '다음 중 JavaScript에서 사용되는 화살표 함수의 특징으로 올바르지 않은 것은?',
     options: [
       '간단한 함수 표현에 유용하다.',

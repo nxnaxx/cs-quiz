@@ -6,14 +6,14 @@ import { center, slideUp } from '@styles/mixins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import AngleArrowSVG from '@assets/icons/angle-arrow.svg?react';
-import useOptionStore, { OptionStore } from '@store/useOptionStore';
-import { QuizType, Topic } from 'src/types/quizTypes';
+import useOptionStore from '@store/useOptionStore';
+import useQuizStore from '@store/useQuizStore';
+import { QuizOptions, QuizType, Topic } from 'src/types/quizTypes';
 import { quizOptions } from '@data/quizData';
 import DifficultyBar from '@molecules/bar/DifficultyBar';
 import Select from '@molecules/select/Select';
 import Chip from '@atoms/chip/Chip';
 import FilledButton from '@atoms/button/FilledButton';
-import useQuizStore from '@store/useQuizStore';
 
 interface OptionModalProps {
   topic: Topic;
@@ -116,15 +116,12 @@ const QuizTypeList = styled.div`
 `;
 
 const OptionModal = forwardRef<HTMLDivElement, OptionModalProps>(({ topic, onCloseModal }, ref) => {
-  const { optionValues, setOptionValues } = useOptionStore();
+  const { optionValues, setOptionValue } = useOptionStore();
   const { resetQuizData } = useQuizStore();
   const navigate = useNavigate();
 
-  const handleChipClick = <K extends keyof OptionStore['optionValues']>(
-    id: K,
-    value: OptionStore['optionValues'][K],
-  ) => {
-    setOptionValues(id, value);
+  const handleChipClick = <K extends keyof QuizOptions>(id: K, value: QuizOptions[K]) => {
+    setOptionValue(id, value);
   };
 
   const handleSubmitClick = () => {
@@ -166,7 +163,7 @@ const OptionModal = forwardRef<HTMLDivElement, OptionModalProps>(({ topic, onClo
                 <Chip
                   key={type}
                   size="small"
-                  isActive={optionValues['quizType'] === type}
+                  isActive={optionValues.quizType === type}
                   onChipClick={() => handleChipClick('quizType', type as QuizType)}
                 >
                   {type}

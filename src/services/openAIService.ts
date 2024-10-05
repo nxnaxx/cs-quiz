@@ -1,8 +1,8 @@
-import { OptionStore } from '@store/useOptionStore';
 import { cleanResponse, createQuizPrompt, quizTypeInterface } from '@utils/quizUtils';
+import { QuizOptions } from 'src/types/quizTypes';
 
 const fetchQuiz = async (
-  { topic, difficulty, quizNum, quizType }: OptionStore['optionValues'],
+  { topic, difficulty, quizNum, quizType }: QuizOptions,
   signal?: AbortSignal,
 ) => {
   const quizTopic = (topic === '프레임워크 및 라이브러리' ? '리액트, SSR과 CSR' : topic) || '';

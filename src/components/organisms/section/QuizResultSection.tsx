@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { mobile } from '@styles/responsive';
@@ -126,24 +126,44 @@ const ButtonWrapper = styled.div`
 export default function QuizResultSection() {
   const { quizData } = useQuizStore();
   const { optionValues } = useOptionStore();
-  const { topic, quizType, difficulty } = optionValues;
+  const { topic, difficulty } = optionValues;
   const navigate = useNavigate();
 
   const correctQuizNum = useMemo(() => {
     if (!quizData) return 0;
-
-    if (quizType === '빈칸 맞추기') {
-      return quizData?.filter((quiz) =>
-        (quiz.answer as string[]).includes(quiz.userAnswer as string),
-      ).length;
-    } else {
-      return quizData?.filter((quiz) => quiz.answer === quiz.userAnswer).length;
-    }
+    return quizData.filter((quiz) => {
+      if (quiz.type === '빈칸 맞추기') {
+        return quiz.answer.includes(quiz.userAnswer as string);
+      }
+      return quiz.answer === quiz.userAnswer;
+    }).length;
   }, [quizData]);
 
-  const handleGoToMain = () => {
+  const progressPercentage = useMemo(() => {
+    if (!quizData) return 0;
+    return Math.round((correctQuizNum / quizData.length) * 100);
+  }, [correctQuizNum, quizData]);
+
+  const handleGoToMain = useCallback(() => {
     navigate('/');
-  };
+  }, [navigate]);
+
+  const renderQuizResults = useMemo(() => {
+    if (!quizData) return null;
+    return quizData.map((quiz, idx) => (
+      <QuizResultItem
+        key={quiz.question}
+        quizType={quiz.type}
+        questionNum={idx + 1}
+        question={quiz.question}
+        answer={quiz.answer}
+        userAnswer={quiz.userAnswer}
+        commentary={quiz.commentary}
+      />
+    ));
+  }, [quizData]);
+
+  if (!quizData) return null;
 
   return (
     <ResultContainer>
@@ -159,9 +179,7 @@ export default function QuizResultSection() {
       </ResultTop>
       <QuizScoreWrapper>
         <Score>
-          <CircularProgress
-            progress={quizData ? Number((correctQuizNum / quizData.length).toFixed(2)) * 100 : 0}
-          />
+          <CircularProgress progress={progressPercentage} />
         </Score>
         <Score>
           <CheckIcon icon={faCircleCheck} />
@@ -174,22 +192,7 @@ export default function QuizResultSection() {
           <ScoreLabel>틀린 문제</ScoreLabel>
         </Score>
       </QuizScoreWrapper>
-      <ResultList>
-        {quizData?.map((quiz, idx) => {
-          const { question, answer, userAnswer, commentary } = quiz;
-          return (
-            <QuizResultItem
-              key={question}
-              quizType={quizType}
-              questionNum={idx + 1}
-              question={question}
-              answer={answer}
-              userAnswer={userAnswer}
-              commentary={commentary}
-            />
-          );
-        })}
-      </ResultList>
+      <ResultList>{renderQuizResults}</ResultList>
       <ButtonWrapper>
         <FilledButton onClick={handleGoToMain}>메인으로</FilledButton>
       </ButtonWrapper>

@@ -40,7 +40,7 @@ const TopicList = styled.div`
 `;
 
 export default function Topics() {
-  const { optionValues, setOptionValues, resetOptions } = useOptionStore();
+  const { optionValues, setOptionValue, resetOptions } = useOptionStore();
   const { isOpened, useOpenRef, handleToggleOpen } = usePreventScroll(false);
 
   useEffect(() => {
@@ -50,7 +50,7 @@ export default function Topics() {
   const handleCardClick = <K extends keyof OptionStore['optionValues']>(
     value: OptionStore['optionValues'][K],
   ) => {
-    setOptionValues('topic', value as Topic);
+    setOptionValue('topic', value as Topic);
     handleToggleOpen();
   };
 
