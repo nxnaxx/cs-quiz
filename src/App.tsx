@@ -1,12 +1,14 @@
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
-import Home from './pages/Home';
-import Topics from './pages/Topics';
-import Loading from '@pages/Loading';
-import Quiz from '@pages/Quiz';
-import QuizResults from '@pages/QuizResults';
+import LazyLoader from '@molecules/spinner/LazyLoader';
 
 function App() {
+  const Home = lazy(() => import('@pages/Home'));
+  const Topics = lazy(() => import('@pages/Topics'));
+  const Loading = lazy(() => import('@pages/Loading'));
+  const Quiz = lazy(() => import('@pages/Quiz'));
+  const QuizResults = lazy(() => import('@pages/QuizResults'));
+
   const ScrollToTop = () => {
     const { pathname } = useLocation();
 
@@ -20,13 +22,15 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="/topics" element={<Topics />} />
-        <Route path="/loading" element={<Loading />} />
-        <Route path="/quiz" element={<Quiz />} />
-        <Route path="/results" element={<QuizResults />} />
-      </Routes>
+      <Suspense fallback={<LazyLoader />}>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/topics" element={<Topics />} />
+          <Route path="/loading" element={<Loading />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/results" element={<QuizResults />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }

@@ -3,13 +3,13 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Meta, StoryObj } from '@storybook/react';
 import useOptionStore from '@store/useOptionStore';
 import useQuizStore from '@store/useQuizStore';
+import QuizResultSection from './QuizResultSection';
+import Home from '@pages/Home';
 import {
   sampleFillBlankResult,
   sampleMultipleResult,
   sampleTrueFalseResult,
 } from 'src/__mocks__/quizMockData';
-import QuizResultSection from './QuizResultSection';
-import Home from '@pages/Home';
 
 const meta: Meta<typeof QuizResultSection> = {
   title: 'organisms/QuizResultSection',

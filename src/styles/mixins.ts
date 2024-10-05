@@ -48,3 +48,9 @@ export const slideUp = keyframes`
     transform: translateY(0);
   }
 `;
+
+export const dotAnimation = keyframes`
+  0% { top: 12px }
+  50% { top: 0 }
+  100% { top: 12px }
+`;
